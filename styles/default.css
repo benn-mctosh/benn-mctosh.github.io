@@ -1,0 +1,273 @@
+/* declare colors */
+:root {
+	--bkgd: #E9E3C2;
+	--dark-hed: #0F3E9B;
+	--light-hed: #5870C1;
+}
+
+/* the html "body" takes up the entire height of the page */
+
+html,body {
+	margin:0;
+	padding:0;
+	height:100%; /* needed for container min-height */
+	font-family:arial,sans-serif;
+	background-color: var(--bkgd);
+}
+
+/* the container takes up the entire body of the page, so the footer can stick to the bottom */
+div#container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	width:100%;
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treated as min-height*/
+	min-height:100%; /* real browsers */
+}
+
+div#header {
+	padding:10px;
+	background-color: var(--bkgd);
+}
+
+div#content {
+	padding:1em 1em 5em; /* bottom padding for footer */
+}
+
+div#footer {
+	position:absolute;
+	width:100%;
+	bottom:0; /* stick to bottom */
+	background-color: var(--light-hed);
+	min-height: 50px;
+}
+
+div#footer p {
+	font-size: 14px;
+	color: White;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+div#footer p a {
+	color: White !important;
+}
+
+/* Responsive design for small/mobile screens */
+
+@media (max-width: 770px) {
+	h1, h2, h3, h4, p {
+		min-width: 270px;
+		width: 60%;
+	}
+
+	div.gallery {
+		min-width: 270px;
+		width: 60%;
+		margin: auto;
+	}
+	div.textframe {
+		width: 270px;
+	}
+	div.textframe p,
+	div.textframe h1,
+	div.textframe h2,
+	div.textframe h3,
+	div.textframe h4
+	{
+		width: 60%;
+		text-align: center;
+		min-width: 270px;
+		margin: auto;
+	}
+	div.smallframe {
+		width: 270px
+	}
+	h1 {
+		font-size: 30px;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	div.spacer200 {
+		height: 100px;
+	}
+
+	div.spacer100 {
+		height: 50px;
+	}
+
+	div.spacer50 {
+		height: 25px;
+	}
+}
+@media (min-width: 771px) {
+	h1, h2, h3, h4, p {
+		width: 500px
+	}
+
+	div.gallery {
+		width: 600px
+	}
+	div.textframe {
+		width: 380px
+	}
+	div.textframe h1,
+	div.textframe h2,
+	div.textframe h3,
+	div.textframe h4,
+	div.textframe p
+	{
+		width: 100%;
+		text-align: left;
+		margin: auto;
+	}
+	div.smallframe {
+		width: 150px
+	}
+	div.spacer200 {
+		height: 200px;
+	}
+
+	div.spacer100 {
+		height: 100px;
+	}
+	div.spacer50 {
+		height: 50px;
+	}
+	div.docwindow {
+		max-width: 600px;
+		margin: auto;
+		width: 100%;
+	}
+
+}
+
+
+
+h1, h2, h3, h4 {
+	color: var(--dark-hed);
+	font-family: Tahoma, Helvetica, sans-serif;
+	font-weight: lighter;
+	margin: auto;
+	text-align: center;
+	margin-top: 10px;
+}
+
+h1 {
+	font-size: 40px
+}
+
+h2 {
+	font-style: italic;
+	color: var(--light-hed);
+}
+
+h4 {
+	font-size: 14px;
+}
+
+p a, td a {
+	color: Black;
+	text-decoration-style: dotted;
+}
+
+p {
+	line-height: 1.4;
+	font-family: Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 16px;
+	margin: auto;
+	margin-bottom: 0px;
+	margin-top: 12px;
+}
+
+div.textframe {
+	float: left;
+	margin: 5px;
+}
+
+div.smallframe {
+	margin: 5px;
+	float: left;
+}
+
+
+
+ul.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+	overflow: hidden;
+	background-color: var(--light-hed);
+}
+
+ul.navbar li {
+	float: right;
+	font-family: Tahoma, Helvetica, sans-serif;
+	font-weight: lighter;
+	color: White;
+	height: 100%;
+}
+
+ul.navbar li a {
+	display: block;
+	background-color: var(--light-hed);
+	color: White;
+	text-decoration: none;
+	padding: 8px;
+}
+
+ul.navbar li a:hover {
+	background-color: var(--dark-hed);
+}
+
+ul.navbar a.active {
+	background-color: White;
+	color: #5870C1;
+}
+
+div.gallery {
+	margin: auto;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+div.frame {
+	margin: 1%;
+	float: left;
+	min-width: 270px !important;
+	width: 48%;
+}
+
+div.frame img {
+	width: 100%;
+	height: auto;
+}
+
+div.smallframe img {
+	width: 100%;
+	height: auto;
+}
+
+table.contact {
+	line-height: 1.4;
+	font-family: Helvetica, sans-serif;
+	font-weight: lighter;
+	font-size: 16px;
+	margin: auto;
+	margin-bottom: 0px;
+	margin-top: 12px;
+	width: 250px;
+}
+
+
+iframe.displaydoc {
+	width: 100%;
+	height: 400px;
+}

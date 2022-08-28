@@ -1,0 +1,161 @@
+/* declare colors */
+:root {
+	--bkgd: #E9E3C2;
+	--dark-tan: #AA9B68;
+	--dark-hed: #0F3E9B;
+	--light-hed: #5870C1;
+}
+
+html,body {
+	margin:0;
+	padding:0;
+	height:100%; /* needed for container min-height */
+	font-family:arial,sans-serif;
+	background-color: var(--bkgd);
+}
+
+/* the container takes up the entire body of the page, so the footer can stick to the bottom */
+div#container {
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	width:100%;
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treated as min-height*/
+	min-height:100%; /* real browsers */
+}
+
+div#header {
+	padding:10px;
+	background-color: var(--bkgd);
+}
+
+div#content {
+	padding:1em 1em 5em; /* bottom padding for footer */
+	max-width: 600px;
+	width: 85%;
+	margin: auto;
+	font-size: 18px;
+}
+
+div#footer {
+	position:absolute;
+	text-align: center;
+	width:100%;
+	bottom:0; /* stick to bottom */
+	background-color: var(--dark-tan);
+	min-height: 50px;
+	font-size: 16px;
+}
+
+div#footer ul {
+	font-size: 16px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin: auto;
+	list-style-type: none;
+}
+
+div#footer li {
+	padding-top: 16px;
+	float: right;
+}
+
+div#footer a {
+	color: black !important;
+	padding: 8px;
+	text-decoration-style: dotted;
+}
+
+/* set heading font and colors */
+
+h1, h2, h3, h4 {
+	color: var(--dark-hed);
+	font-family: Tahoma, Helvetica, sans-serif;
+	font-weight: lighter;
+	margin: auto;
+	text-align: center;
+	margin-top: 10px;
+}
+
+div#home a {
+	display: block;
+}
+
+div#header a {
+	text-decoration: none;
+	color: inherit !important;
+}
+
+div#header h4 {
+	text-decoration: underline;
+	text-decoration-color: var(--bkgd);
+}
+
+div#header a:hover {
+	text-decoration: underline;
+	text-decoration-color: auto !important;
+}
+
+h1 {
+	font-size: 40px
+}
+
+h2 {
+	font-style: italic;
+	color: var(--light-hed);
+}
+
+h3 {
+	font-size: 24px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+/* make links in page content look better */
+
+div#content a {
+	color: inherit;
+	text-decoration-style: dotted;
+}
+
+/* some spacer elements
+[I should probably use padding but this is easier] */
+
+div.spacer200 {
+	height: 100px;
+}
+
+div.spacer100 {
+	height: 50px;
+}
+
+div.spacer50 {
+	height: 25px;
+	width: 100%;
+}
+
+table#contact {
+	margin: auto;
+	width: 300px;
+	border-collapse: collapse;
+}
+
+table#contact a {
+	display: block;
+	padding: 8px;
+}
+
+iframe.displaydoc {
+	width: 100%;
+	height: 400px;
+}
+
+div#content img {
+	float: right;
+	max-width: 80%;
+	height: auto;
+	padding: 15px;
+	margin: auto;
+}
