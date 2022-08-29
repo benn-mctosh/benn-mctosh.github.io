@@ -37,6 +37,8 @@ div#content {
 	font-size: 36px;
 }
 
+/* Position and style footer */
+
 div#footer {
 	position:absolute;
 	text-align: center;
@@ -61,9 +63,9 @@ div#footer li {
 }
 
 div#footer a {
-	color: black !important;
+	color: Black !important;
 	padding: 16px;
-	text-decoration-style: none;
+	text-decoration-style: none !important;
 }
 
 div#footer img {
@@ -102,8 +104,7 @@ div#header h4 {
 }
 
 div#header a:hover {
-	text-decoration: underline;
-	text-decoration-color: var(--bkgd) !important;
+	font-weight: Bold; 
 }
 
 h1 {
@@ -122,6 +123,10 @@ h3 {
 
 h4 {
 	font-size: 32px;
+}
+
+hr {
+	border-top: var(--dark-tan);
 }
 
 /* make links in page content look better */
@@ -147,6 +152,8 @@ div.spacer50 {
 	width: 100%;
 }
 
+/* table of contact details */ 
+
 table#contact {
 	margin: auto;
 	width: 500px;
@@ -157,6 +164,8 @@ table#contact a {
 	display: block;
 	padding: 16px;
 }
+
+/* Other display elements */
 
 iframe.displaydoc {
 	width: 100%;
