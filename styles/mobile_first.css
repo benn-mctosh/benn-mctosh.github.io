@@ -95,16 +95,11 @@ div#home a {
 
 div#header a {
 	text-decoration: none;
-	color: inherit !important;
-}
-
-div#header h4 {
-	text-decoration: underline;
-	text-decoration-color: var(--bkgd);
+	color: inherit;
 }
 
 div#header a:hover {
-	font-weight: Bold; 
+	color: var(--light-hed); 
 }
 
 h1 {
