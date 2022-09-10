@@ -5,65 +5,64 @@
   <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
   <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
   <link rel="stylesheet" href="styles/W3.css">
-  <title>Bennett McIntosh</title>
+  <title>CV - Bennett McIntosh</title>
   <meta property="og:title" content="Bennett McIntosh"/>
   <meta property="og:description" content="Graduate student in the History of Science, Medicine, and Technology at UW-Madison"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body class=w3-khaki>
+<body class=w3-khaki id=top>
 
-  <!-- small screen menu -->
-  <div class="w3-row w3-khaki w3-top w3-hide-large">
+  <!-- top bar menu -->
+  <div class="w3-row w3-light-blue w3-top">
     <div class="w3-dropdown-click w3-hover-pale-blue">
-      <button onclick="toggle_mobile_ToC()" class="w3-button w3-khaki">
-        Contents</i>
+      <button onclick="toggle_mobile_ToC()" class="w3-button w3-light-blue w3-hover-pale-blue">
+        Contents &#9662;
       </button>
       <div class="w3-dropdown-content w3-bar-block w3-border" id=mobile_ToC>
-        <a href=#top class="w3-bar-item w3-button">> Contact</a>
-        <a href=#education class="w3-bar-item w3-button">> Education</a>
-        <a href=#research class="w3-bar-item w3-button">> Research</a>
-        <a href=#experience class="w3-bar-item w3-button">> Professional Experience</a>
-        <a href=#publications class="w3-bar-item w3-button">> Publications</a>
-        <a href=#presentations class="w3-bar-item w3-button">> Presentations</a>
-        <a href=#journalism class="w3-bar-item w3-button">> Journalism</a>
-        <a href=#"other courses" class="w3-bar-item w3-button">> Non-Degree Coursework</a>
-        <a href=#awards class="w3-bar-item w3-button">> Awards</a>
-        <a href=#teaching class="w3-bar-item w3-button">> Teaching Experience</a>
-        <a href=#"professional development" class="w3-bar-item w3-button">> Professional Development</a>
-        <a href=#memberships class="w3-bar-item w3-button">> Memberships</a>
+        <a href=#top class="w3-bar-item w3-button">Contact</a>
+        <a href=#education class="w3-bar-item w3-button">Education</a>
+        <a href=#research class="w3-bar-item w3-button">Research</a>
+        <a href=#experience class="w3-bar-item w3-button">Professional Experience</a>
+        <a href=#publications class="w3-bar-item w3-button">Publications</a>
+        <a href=#presentations class="w3-bar-item w3-button">Presentations</a>
+        <a href=#journalism class="w3-bar-item w3-button">Journalism</a>
+        <a href=#other_courses class="w3-bar-item w3-button">Non-Degree Coursework</a>
+        <a href=#awards class="w3-bar-item w3-button">Awards</a>
+        <a href=#teaching class="w3-bar-item w3-button">Teaching Experience</a>
+        <a href=#development class="w3-bar-item w3-button">Professional Development</a>
+        <a href=#memberships class="w3-bar-item w3-button">Memberships</a>
       </div>
     </div>
     <a href="files/McIntosh_CV-2022.pdf" class="w3-bar-item w3-button w3-hover-pale-blue">Download/Print</a>
     <a href="index.html" class="w3-bar-item w3-button w3-hover-pale-blue">Home</a>
-
   </div>
 
-  <!-- large screen menu -->
-  <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-khaki" style="width:180px;" id="cvNavbar">
+  <!-- deprecated sidebar menu
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-light-blue w3-hide-large w3-hide-medium w3-hide-small" style="width:170px;" id="cvNavbar">
     <button class="w3-bar-item w3-button w3-xlarge w3-hide-large">&nbsp;</button>
-    <a href=index.html class="w3-bar-item w3-button">Home</a>
-    <a href="files/McIntosh_CV-2022.pdf" class="w3-bar-item w3-button">Download/Print</a>
+    <a href=index.html class="w3-bar-item w3-button w3-hover-pale-blue">Home</a>
+    <a href="files/McIntosh_CV-2022.pdf" class="w3-bar-item w3-button w3-hover-pale-blue">Download/Print</a>
     <div class="w3-dropdown-hover w3-hover-pale-blue">
-      <button class="w3-button">
+      <button class="w3-button w3-hover-pale-blue">
         Contents <b>⌄</b></i>
       </button>
       <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href=#top class="w3-bar-item w3-button">> Contact</a>
-        <a href=#education class="w3-bar-item w3-button">> Education</a>
-        <a href=#research class="w3-bar-item w3-button">> Research</a>
-        <a href=#experience class="w3-bar-item w3-button">> Professional Experience</a>
-        <a href=#publications class="w3-bar-item w3-button">> Publications</a>
-        <a href=#presentations class="w3-bar-item w3-button">> Presentations</a>
-        <a href=#journalism class="w3-bar-item w3-button">> Journalism</a>
-        <a href=#"other courses" class="w3-bar-item w3-button">> Non-Degree Coursework</a>
-        <a href=#awards class="w3-bar-item w3-button">> Awards</a>
-        <a href=#teaching class="w3-bar-item w3-button">> Teaching Experience</a>
-        <a href=#"professional development" class="w3-bar-item w3-button">> Professional Development</a>
-        <a href=#memberships class="w3-bar-item w3-button">> Memberships</a>
+        <a href=#top class="w3-bar-item w3-button">Contact</a>
+        <a href=#education class="w3-bar-item w3-button">Education</a>
+        <a href=#research class="w3-bar-item w3-button">Research</a>
+        <a href=#experience class="w3-bar-item w3-button">Professional Experience</a>
+        <a href=#publications class="w3-bar-item w3-button">Publications</a>
+        <a href=#presentations class="w3-bar-item w3-button">Presentations</a>
+        <a href=#journalism class="w3-bar-item w3-button">Journalism</a>
+        <a href=#other_courses class="w3-bar-item w3-button">Non-Degree Coursework</a>
+        <a href=#awards class="w3-bar-item w3-button">Awards</a>
+        <a href=#teaching class="w3-bar-item w3-button">Teaching Experience</a>
+        <a href=#development class="w3-bar-item w3-button">Professional Development</a>
+        <a href=#memberships class="w3-bar-item w3-button">Memberships</a>
       </div>
     </div>
   </div>
-
+-->
   <!-- deprecated menu button -->
   <button class="w3-button w3-top w3-xlarge w3-hide-large w3-hide-medium w3-hide-small" style="background-color:transparent!important;width:52px!important" onclick="toggle_menu()">&#9776;</button>
 
@@ -77,9 +76,9 @@
   </div>
 
   <!-- CV -->
-  <div class="w3-col m10 w3-white" style="max-width:780px;box-shadow:5px 5px #888888">
+  <div class="w3-col m10 w3-white" style="max-width:780px;box-shadow:5px 5px #aaaa88">
 
-    <div class="w3-row w3-container cv_head" id=top>
+    <div class="w3-row w3-container cv_head">
       <h3 style="padding-top:40px !important;">Curriculum Vitae</h3>
     </div>
 
@@ -314,7 +313,7 @@
       </div>
     </div>
 
-    <div class="w3-row w3-container cv_head" id="other courses">
+    <div class="w3-row w3-container cv_head" id=other_courses>
       <h3>Non-degree Coursework</h3>
     </div>
 
@@ -395,7 +394,7 @@
       </div>
     </div>
 
-    <div class="w3-row w3-container cv_head" id="professional development">
+    <div class="w3-row w3-container cv_head" id=development>
       <h3>Professional Development</h3>
     </div>
 
