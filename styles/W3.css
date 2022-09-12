@@ -279,18 +279,12 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   max-width: 600px
 }
 
+.cv_year {
+  min-width: 90px;
+}
+
 @media (min-width: 700px) {
   .cv_year {
     max-width:180px;
-  }
-}
-
-body {
-  --screen: "sm"
-}
-
-@media (min-width: 993px) {
-  body {
-    --screen: "lg"
   }
 }
