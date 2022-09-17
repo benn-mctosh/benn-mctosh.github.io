@@ -15,10 +15,10 @@
   <!-- top bar menu -->
   <div class="w3-row w3-light-blue w3-top">
     <div class="w3-dropdown-click w3-hover-pale-blue">
-      <button onclick="toggle_mobile_ToC()" class="w3-button w3-light-blue w3-hover-pale-blue">
+      <button onclick="toggle_mobileToC()" class="w3-button w3-light-blue w3-hover-pale-blue">
         Contents &#9662;
       </button>
-      <div class="w3-dropdown-content w3-bar-block w3-border" id=mobile_ToC>
+      <div class="w3-dropdown-content w3-bar-block w3-border" id=mobileToC>
         <a href=#top class="w3-bar-item w3-button">Contact</a>
         <a href=#education class="w3-bar-item w3-button">Education</a>
         <a href=#research class="w3-bar-item w3-button">Research</a>
@@ -506,8 +506,8 @@ function toggle_menu() {
   }
 }
 
-function toggle_mobile_ToC() {
-  var x = document.getElementById("mobile_ToC");
+function toggle_mobileToC() {
+  var x = document.getElementById("mobileToC");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {
