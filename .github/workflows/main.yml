@@ -1,13 +1,16 @@
-name: Send a Tweet
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push, workflow_dispatch]
-jobs:
-  tweet:
+jobs: 
+  Send-Tweet:
     runs-on: ubuntu-latest
     steps:
-      - uses: ethomson/send-tweet-action@v1
+      - name: Tweet
+        uses: snow-actions/tweet@v1.3.0
         with:
-          status: "Hello, is this thing on?"
-          consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          status: "Hello is this thing on?"
+        env:
+          CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_CONSUMER_API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
