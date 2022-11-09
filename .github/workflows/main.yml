@@ -1,0 +1,16 @@
+name: Send Tweet Action
+on: [push]
+jobs: 
+  tweet: 
+    uses: ethomson/send-tweet-action@288f9339e0412e3038dce350e0da5ecdf12133a6
+    with:
+      # The status ("tweet") to post to twitter.
+      status: "Hello, is this thing on?"
+      # Consumer API key, available in the "Keys and tokens" section of your application in the Twitter Developer site.
+      consumer-key: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+      # Consumer API secret key, available in the "Keys and tokens" section of your application in the Twitter Developer site.
+      consumer-secret: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+      # Application access token, available in the "Keys and tokens" section of your application in the Twitter Developer site.
+      access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+      # Application access token secret, available in the "Keys and tokens" section of your application in the Twitter Developer site.
+      access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
