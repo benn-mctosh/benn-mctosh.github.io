@@ -2,7 +2,7 @@ name: Send Tweet Action
 on: [push]
 jobs: 
   tweet: 
-    uses: ethomson/send-tweet-action@288f9339e0412e3038dce350e0da5ecdf12133a6
+    uses: .github/workflows/ethomson/send-tweet-action@288f9339e0412e3038dce350e0da5ecdf12133a6
     with:
       # The status ("tweet") to post to twitter.
       status: "Hello, is this thing on?"
