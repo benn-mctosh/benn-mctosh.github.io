@@ -1,15 +1,16 @@
+name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push, workflow_dispatch]
-name: publish-to-twitter
-
-jobs:
-  build:
+jobs: 
+  Send-Tweet:
     runs-on: ubuntu-latest
     steps:
-      - uses: infraway/tweet-action@v1
+      - name: Tweet
+        uses: snow-actions/tweet@v1.3.0
         with:
-          status: Tweeted from Github Actions
-          api_key: ${{ secrets.TWITTER_API_KEY }}
-          api_key_secret: ${{ secrets.TWITTER_API_KEY_SECRET }}
-          access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access_token_secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          status: "Hello is this thing on?"
+        env:
+          CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          CONSUMER_API_SECRET_KEY: ${{ secrets.TWITTER_CONSUMER_API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
