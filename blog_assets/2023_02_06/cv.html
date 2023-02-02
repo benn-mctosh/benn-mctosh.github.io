@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" sizes="192x192" href="pics/favicosahedron.png">
+  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="stylesheet" href="styles/W3.css">
+  <title>CV&#8211;Bennett McIntosh</title>
+  <meta property="og:title" content="Bennett McIntosh"/>
+  <meta property="og:description" content="Graduate student in the History of Science, Medicine, and Technology at UW-Madison"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class=w3-khaki id=top>
+
+  <!-- top bar menu -->
+  <div class="w3-row w3-light-blue w3-top">
+    <div class="w3-dropdown-click w3-hover-pale-blue">
+      <button onclick="toggle_mobileToC()" class="w3-button w3-light-blue w3-hover-pale-blue">
+        Contents &#9662;
+      </button>
+      <div class="w3-dropdown-content w3-bar-block w3-border" id=mobileToC>
+        <a href=#top class="w3-bar-item w3-button">Contact</a>
+        <a href=#education class="w3-bar-item w3-button">Education</a>
+        <a href=#research class="w3-bar-item w3-button">Research</a>
+        <a href=#experience class="w3-bar-item w3-button">Professional Experience</a>
+        <a href=#publications class="w3-bar-item w3-button">Publications</a>
+        <a href=#presentations class="w3-bar-item w3-button">Presentations</a>
+        <a href=#journalism class="w3-bar-item w3-button">Journalism</a>
+        <a href=#other_courses class="w3-bar-item w3-button">Non-Degree Coursework</a>
+        <a href=#awards class="w3-bar-item w3-button">Awards</a>
+        <a href=#teaching class="w3-bar-item w3-button">Teaching Experience</a>
+        <a href=#development class="w3-bar-item w3-button">Professional Development</a>
+        <a href=#memberships class="w3-bar-item w3-button">Memberships</a>
+      </div>
+    </div>
+    <a href="files/McIntosh_CV-2022.pdf" class="w3-bar-item w3-button w3-hover-pale-blue">Download/Print</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-pale-blue">Home</a>
+  </div>
+
+  <!-- deprecated sidebar menu
+  <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-light-blue w3-hide-large w3-hide-medium w3-hide-small" style="width:170px;" id="cvNavbar">
+    <button class="w3-bar-item w3-button w3-xlarge w3-hide-large">&nbsp;</button>
+    <a href=index.html class="w3-bar-item w3-button w3-hover-pale-blue">Home</a>
+    <a href="files/McIntosh_CV-2022.pdf" class="w3-bar-item w3-button w3-hover-pale-blue">Download/Print</a>
+    <div class="w3-dropdown-hover w3-hover-pale-blue">
+      <button class="w3-button w3-hover-pale-blue">
+        Contents <b>⌄</b></i>
+      </button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href=#top class="w3-bar-item w3-button">Contact</a>
+        <a href=#education class="w3-bar-item w3-button">Education</a>
+        <a href=#research class="w3-bar-item w3-button">Research</a>
+        <a href=#experience class="w3-bar-item w3-button">Professional Experience</a>
+        <a href=#publications class="w3-bar-item w3-button">Publications</a>
+        <a href=#presentations class="w3-bar-item w3-button">Presentations</a>
+        <a href=#journalism class="w3-bar-item w3-button">Journalism</a>
+        <a href=#other_courses class="w3-bar-item w3-button">Non-Degree Coursework</a>
+        <a href=#awards class="w3-bar-item w3-button">Awards</a>
+        <a href=#teaching class="w3-bar-item w3-button">Teaching Experience</a>
+        <a href=#development class="w3-bar-item w3-button">Professional Development</a>
+        <a href=#memberships class="w3-bar-item w3-button">Memberships</a>
+      </div>
+    </div>
+  </div>
+-->
+  <!-- deprecated menu button -->
+  <button class="w3-button w3-top w3-xlarge w3-hide-large w3-hide-medium w3-hide-small" style="background-color:transparent!important;width:52px!important" onclick="toggle_menu()">&#9776;</button>
+
+
+<!-- content -->
+
+<div class="w3-row w3-khaki w3-container" style="padding-top:50px;padding-bottom:50px">
+
+  <!-- left margin -->
+  <div class="w3-col m1 l2 w3-container">&nbsp;
+  </div>
+
+  <!-- CV -->
+  <div class="w3-col m10 w3-white" style="max-width:780px;box-shadow:5px 5px #aaaa88">
+
+    <div class="w3-row w3-container cv_head">
+      <h3 style="padding-top:40px !important;">Curriculum Vitae</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">&nbsp;
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Bennett A. McIntosh</b></p>
+        <p>5084 Mosse Humanities Building</p>
+        <p>UW Madison &#8211; Department of History</p>
+        <p>455 N. Park St. Madison, WI 53706</p>
+        <p><a href="mailto:bamcintosh@wisc.edu">bamcintosh@wisc.edu</a></p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id=education>
+      <h3>Education</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2022&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Ph.D. student, History of Science, Medicine, and Technology</b></p>
+        <p>University of Wisconsin&#8211;Madison, Madison, WI</p>
+        <p><i>Certificate in Science and Technology Studies</i></p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2022</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>M.A., History of Science, Medicine, and Technology</b></p>
+        <p>University of Wisconsin&#8211;Madison, Madison, WI</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2017</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>M.S., Science Writing</b></p>
+        <p>Massachusetts Institute of Technology, Cambridge, MA</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>B.A., Chemistry,</b> <i>magna cum laude</i></p>
+        <p>Princeton University, Princeton, NJ</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="research">
+      <h3>Research Projects</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2022&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Open Science and Environmental Regulation</b></p>
+        <p>With Nicole Nelson, UW-Madison, Madison, WI</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2015&#8211;2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b><i>De novo</i> protein library design & characterization</b></p>
+        <p>Lab of Michael Hecht, Princeton University, Princeton, NJ</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2015</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b><i>De novo</i> polypeptide design & characterization</b></p>
+        <p>Lab of Louise Serpell, University of Sussex, Brighton, UK</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2014</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Computational simulation of restriction enzyme dynamics</b></p>
+        <p>Lab of R&#252;diger Ettrich, Czech Academy of Sciences, Nov&#233; Hrady, CZ</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2013</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Transcriptomics of <i>S. cerevisiae</i> respiration cycle</b></p>
+        <p>Lab of Megan McClean, Princeton University, Princeton, NJ</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="experience">
+      <h3>Other Professional Experience</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2022&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Editorial Project Assistant</b></p>
+        <p><i>Social Studies of Science</i></p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2016&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Freelance Science Reporter & Editor</b></p>
+        <p><i>Harvard Magazine</i>; <i>NOVAnext</i>; <i>Oceanus</i>; <i>Princeton Alumni Weekly</i>; <i>Science for the People</i></p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2018&#8211;2020</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Science Communications Contractor</b></p>
+        <p>Hertz Foundation; National High Magnetic Field Laboratory; Princeton University; University of Georgia</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2017&#8211;2018</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Communications Officer</b></p>
+        <p>The Fannie & John Hertz Foundation, Livermore, CA</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2017</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Public Affairs Intern</b></p>
+        <p>University of California, San Francisco Office of Public Affairs, San Francisco, CA</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Science Writing Intern</b></p>
+        <p>Princeton University Office of the Dean for Research, Princeton, NJ</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="publications">
+      <h3>Peer-Reviewed Publications</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2017</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p>Al-Garawi, Z. S., <u>B. A. McIntosh</u>, D. Neill-Hall, A. A. Hatimy, S. M. Sweet, M. C. Bagley, and L. C. Serpell. <b>&#8220;The Amyloid Architecture Provides a Scaffold for Enzyme-like Catalysts.&#8221;</b> <i>Nanoscale</i> 9, no. 30 (2017): 10773&#8211;83. <a href="https://doi.org/10.1039/C7NR02675G" target="_blank">https://doi.org/10.1039/C7NR02675G</a></p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="presentations">
+      <h3>Conference Presentations</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2022</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><u>McIntosh, B.</u> <b>&#8220;Abstraction, Data-Based Biology, and Social Science after the Genome.&#8221;</b> April 2022, Midwest Junto for the History of Science, Ames, IA <i>*Conference Cancelled due to COVID</i></p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2014</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><u>McIntosh, B.</u>, P. Grinkevich, A.R. Li, R. Ettrich. <b>&#8220;Exploring the conformational space of a new domain in EcoR124I&#8217;s translocation-restriction subunit.&#8221;</b> July 2014, Conference of the 2nd Summer School in Molecular Biophysics and Systems Biology, Nov&#233; Hrady, CZ</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="journalism">
+      <h3>Journalism & Other Public Writing</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2016&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p>You can read my published work in:</p>
+        <ul style="list-style-type:'- '">
+          <li><i><a target="_blank" href="https://paw.princeton.edu/bio/bennett-mcintosh">Princeton Alumni Weekly</a></i></li>
+          <li><i><a target="_blank" href="https://www.harvardmagazine.com/profile/Bennett-McIntosh">Harvard Magazine</a></i></li>
+          <li><i><a target="_blank" href="https://www.pbs.org/wgbh/nova/author/bennett-mcintosh/">NOVAnext</a></i></li>
+          <li><i><a target="_blank" href="https://magazine.scienceforthepeople.org/vol22-2/the-science-journalism-we-need/">Science for the People</a></i></li>
+          <li><i><a target="_blank" href="https://www.whoi.edu/oceanus/author/bennett-mcintosh/">Oceanus</a></i></li>
+          <li><a target="_blank" href="https://mitpress.mit.edu/books/find-your-path/"><i>Find Your Path</i></a> (MIT Press, 2019) [as researcher & contributing editor]</li>
+        </ul>
+        <p>Or, <a href="files/McIntosh_CV-2022.pdf" target="_blank">download my CV</a> to view the full list.</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id=other_courses>
+      <h3>Non-degree Coursework</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2019</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Risk, Fortune, and Futurity</b> [STS.414]</p>
+        <p>Visiting student in graduate seminar in MIT&#8217;s History Anthropology, and STS program</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2018</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Societal and Political Implications of Technology </b> [STS.462]</p>
+        <p>Visiting student in graduate seminar in MIT&#8217;s History Anthropology, and STS program</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="awards">
+      <h3>Awards & Honors</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2020</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Holtz Center Top-Up Award</b></p>
+        <p>Holtz Center for Science and Technology Studies, UW-Madison. (Value: $4,000 over two years)</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>Fulbright Award</b></p>
+        <p>Host institution: Lund University, Lund, SE. (Value: SEK 119,000 over one year; declined)</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p class="w3-hide-small">2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>High Meadows Research and Communications Fellowship</b></p>
+        <p>Host institution: Climate Central, Princeton, NJ. (Value: $73,500 over two years; declined)</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="teaching">
+      <h3>Teaching Experience</h3>
+      <p><u>As Teaching Assistant:</u></p>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>Spring 2022</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>The Making of Modern Science</b></p>
+        <p>Hist Sci 202,with Prof. Devin Kennedy, UW-Madison, Madison, WI</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>Fall 2021</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>The Digital Age</b></p>
+        <p>Hist Sci 150, with Prof. Devin Kennedy, UW-Madison, Madison, WI</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id=development>
+      <h3>Professional Development</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2021</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>&#8220;The Discussion Project.&#8221;</b></p>
+        <p>Three-day discussion-based pedagogy workshop, Wisconsin Center for Education Research, UW&#8211;Madison</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p class="w3-hide-small">2021</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>&#8220;Qualitative Research Methods: Analyzing Data.&#8221;</b></p>
+        <p>Online course, MITx</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p class="w3-hide-small">2021</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p><b>&#8220;Qualitative Research Methods: Conversational Interviewing.&#8221;</b></p>
+        <p>Online course, MITx</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="memberships">
+      <h3>Memberships</h3>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2020&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p>Society for the Social Studies of Science</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2020&#8211;</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p>History of Science Society</p>
+      </div>
+    </div>
+
+    <div class="w3-row cv_row" display=none>
+      <div class="w3-col m2 w3-container cv_year">
+        <p>2014&#8211;2016</p>
+      </div>
+      <div class="w3-container w3-rest cv_entry">
+        <p>American Chemical Society</p>
+      </div>
+    </div>
+
+    <div class="w3-row w3-container cv_head" id="end">
+      <p style="text-align:center">*&emsp;&emsp;&emsp;&emsp;&emsp;*&emsp;&emsp;&emsp;&emsp;&emsp;*</p>
+    </div>
+
+
+  </div>
+
+  <!-- right margin -->
+  <div class="w3-rest w3-khaki">&nbsp;</div>
+</div>
+<!-- footer -->
+<div class="w3-row w3-bar w3-light-blue">
+  <div class="w3-half" >
+    <a href="#top" class="w3-bar-item w3-button w3-hover-pale-blue">&copy; 2022 Bennett McIntosh</a>
+  </div>
+  <div class="w3-half">
+    <a href="cv.html" class="w3-bar-item w3-button w3-hover-pale-blue">
+      CV
+    </a>
+    <a target="_blank"href="mailto:bamcintosh@wisc.edu" class="w3-bar-item w3-button w3-hover-pale-blue">
+      <img src="pics/icons/email_clear_short.png" alt="Email" width=30 height=20>
+    </a>
+    <a target="_blank"href="https://www.twitter.com/wordsbybennett" class="w3-bar-item w3-button w3-hover-pale-blue">
+      <img src="pics/icons/twitter_clear.jpg" alt="Twitter" width=20 height=20>
+    </a>
+    <a target="_blank"href="https://www.github.com/benn-mctosh" class="w3-bar-item w3-button w3-hover-pale-blue">
+      <img src="pics/icons/octocat_clear.png" alt="Twitter" width=20 height=20>
+    </a>
+  </div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("cvNavbar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("cvNavbar").style.display = "none";
+}
+
+function toggle_menu() {
+  if (document.getElementById("cvNavbar").style.display == "block") {
+    document.getElementById("cvNavbar").style.display = "none";
+  }
+  else {
+    document.getElementById("cvNavbar").style.display = "block";
+  }
+}
+
+function toggle_mobileToC() {
+  var x = document.getElementById("mobileToC");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+</script>
+
+</body>
+</html>
