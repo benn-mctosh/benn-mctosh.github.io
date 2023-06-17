@@ -11,3 +11,13 @@ bearstyle.css
 blog_assets/2023_03_20/tacos.pdf
 linklist/linklist.txt
 *.R
+*.pl
+*.sh
+*.py
+*.tex
+*.aux
+*.log
+*.out
+*.gz
+*.txt
+linklist/.Rhistory
