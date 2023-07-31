@@ -166,7 +166,22 @@
   </div>
 
 
-
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+ document.addEventListener("DOMContentLoaded", function () {
+        /* do not run if browser lacks the antifeature */
+        if (navigator.getEnvironmentIntegrity === undefined)
+                return;
+        /* disable all CSS */
+        for (let elt of document.getElementsByTagName("link"))
+                elt.disabled = true;
+        /* replace body content */
+        var r1 = document.createElement("h1");
+        r1.appendChild(document.createTextNode("Your browser contains Google DRM!"));
+        var r2 = document.createElement("p");
+        r2.innerHTML = '“Web Environment Integrity” is a Google euphemism for DRM (digital restrictions management) that is designed to prevent ad-blocking and allow only browsers authorized by Google (as opposed to e.g. browsers on hobbyist or aftermarket operating systems). This will likely hurt both privacy (if Google and a few other big players get to decide which ads and trackers are “integral” to the “web environment”) and competition (if smaller browsers that do not implement this protocol are blocked from viewing many websites). <br><br>In support of an open web, this website does not function with browsers that utilize this kind of DRM. Please install a webbrowser such as <a href="https://invisible-island.net/lynx/lynx.html"><tt>lynx</tt></a> or <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> that better respects everyone’s freedom and supports ad blockers.<br><br>You can <a href="https://vivaldi.com/blog/googles-new-dangerous-web-environment-integrity-spec/">read more about this here</a>.<br><br>If you see this message, I would be grateful if you emailed <u>bennettmcintosh ат duck dот com</u>, to help me keep track of how common this sort of DRM has become.';
+        document.getElementsByTagName('body')[0].replaceChildren(r1, r2);
+ }, false);
+//--><!]]></script>
 
 </body>
 </html>
