@@ -16,8 +16,8 @@ linklist/linklist.txt
 *.log
 *.out
 *.gz
-*.txt
-linklist/.Rhistory
+cvtable.txt
+linklist/*
 drageg.html
 words.html
 words.js
