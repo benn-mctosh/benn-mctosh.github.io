@@ -64,6 +64,47 @@
         <a onclick="submitPlay()" href="#" id="play" style="margin:10px;width:185px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">☑️ Play for -- points</a>
       </div>
       <div class="w3-row w3-center">
+        <p><a href="#" onclick="window.open('https://scrabble.merriam.com/', 'popup', 'location=0,width=400,height=300,left=500,top=55'); return false;">Search in the Scrabble Dictionary</a></p>
+        <p><a href="#" onclick="toggleLetterCount()">Show/hide letter frequency</a></p>
+        <table hidden id="tilecounter">
+          <tr>
+            <td>9×A<sup>1</sup> &nbsp;</td>
+            <td>3×B<sup>3</sup> &nbsp;</td>
+            <td>2×C<sup>3</sup> &nbsp;</td>
+            <td>4×D<sup>2</sup> &nbsp;</td>
+            <td>14×E<sup>1</sup> &nbsp;</td>
+            <td>3×F<sup>5</sup> &nbsp;</td>
+            <td>5×G<sup>3</sup> &nbsp;</td>
+          </tr>
+          <tr>
+            <td>5×H<sup>3</sup> &nbsp;</td>
+            <td>9×I<sup>1</sup> &nbsp;</td>
+            <td>1×J<sup>8</sup> &nbsp;</td>
+            <td>2×K<sup>6</sup> &nbsp;</td>
+            <td>5×L<sup>2</sup> &nbsp;</td>
+            <td>3×M<sup>2</sup> &nbsp;</td>
+            <td>5×N<sup>1</sup> &nbsp;</td>
+          </tr>
+          <tr>            
+            <td>9×O<sup>5</sup> &nbsp;</td>
+            <td>3×P<sup>3</sup> &nbsp;</td>
+            <td>1×Q<sup>10</sup> &nbsp;</td>
+            <td>4×R<sup>1</sup> &nbsp;</td>
+            <td>4×S<sup>1</sup> &nbsp;</td>
+            <td>4×T<sup>3</sup> &nbsp;</td>
+            <td>6×U<sup>3</sup> &nbsp;</td>
+          </tr>          
+          <tr>            
+            <td>2×V<sup>K</sup> &nbsp;</td>
+            <td>2×W<sup>5</sup> &nbsp;</td>
+            <td>1×X<sup>8</sup> &nbsp;</td>
+            <td>2×Y<sup>5</sup> &nbsp;</td>
+            <td>1×Z<sup>9</sup> &nbsp;</td>
+            <td>3×_<sup>0</sup> &nbsp;</td>
+            <td></td>
+          </tr>          
+        </table>  
+
         <input hidden type="checkbox" id="checker" name="checker" value="playCheckerOn">
         <label hidden for="checker">Check plays as you go</label><br>
         <input hidden type="checkbox" id="fullRules" name="fullRules" value="playCheckerOn">

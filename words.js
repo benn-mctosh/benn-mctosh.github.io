@@ -694,6 +694,18 @@
     k.setAttribute("hidden", false)
   } 
   
+  function toggleLetterCount() {
+    let tc = document.getElementById("tilecounter")
+    if (tc.hasAttribute("hidden")) {
+      tc.removeAttribute("hidden");
+      
+    }
+    else {
+      tc.setAttribute("hidden", false)
+    }
+
+  }
+  
   function reviseScore() {
       letters.length = 0;
       cells.length = 0;
