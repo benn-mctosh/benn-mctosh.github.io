@@ -475,21 +475,23 @@
       MAX = MIN + 15;
     }
 
+   // alert("m= " + m)
+
     if ((tiles[cell - m] == '-') && (tiles[cell + m] == '-')) {
-      // alert("isolated cell")
-      return "";
+     // alert("isolated cell")
+      return [];
     }
     // // alert("findBranch called")
 
-    const word = [letter];
-    head = cell - m;
-    tail = cell + m;
+    const branchWord = [letter];
+    let head = cell - m;
+    let tail = cell + m;
     while (head > MIN) {
       if (tiles[head] == "-") { 
         // alert("found head at " + head + " word is "  + word)
         break; 
       }
-      word.unshift(tiles[head]);
+      branchWord.unshift(tiles[head]);
       head -= m;
     }
     while (tail < MAX) {
@@ -498,11 +500,11 @@
         // alert("found tail at " + tail + " word is "  + word)
         break;   
       }
-      word.push(tiles[tail]);
+      branchWord.push(tiles[tail]);
       tail += m;
     }
      
-    return word;
+    return branchWord;
   }
   
   function score(letters, cells) {
@@ -571,15 +573,17 @@
         // // alert(stem[i])
         // // alert(cell)
         let branch = findBranch(stem[i], cell, "v")
-        // alert(branch.join(""))
+        branches.push(branch)
         // if (!dictionary.includes(branch.join("").toUpperCase())) {
           // return {score: NaN, error: "invalid word: " + branch.join("")}
         // }
-        if (branch != "") {
+        if (branch.length != 0) {
+          // alert("v branch: " + branch + " of length " + branch.length)
+
            // alert("branch: " + branch)
             isAttached = true;  
             if (!dictionary.includes(branch.join("").toUpperCase())) {
-              return {score: NaN, error: "Invalid word: " + branch.join("")}
+              return {score: NaN, error: "Invalid branch word: " + branch.join(""), branches: branches}
             }        
           score += (scoreWord(branch) + addends[addends.length - 1]) * 
                    factors[factors.length - 1];
@@ -623,12 +627,12 @@
         // // alert(stem[i])
         // // alert(cell)
         let branch = findBranch(stem[i], cell, "h")
-        // alert(branch.join(""))
+        branches.push(branch)
 
-        if (branch != "") {
-           // alert("branch: " + branch)
+        if (branch.length != 0) {
+          // alert("h branch: " + branch + " of length " + branch.length)
             if (!dictionary.includes(branch.join("").toUpperCase())) {
-              return {score: NaN, error: "Invalid word: " + branch.join("")}
+              return {score: NaN, error: "Invalid branch word: " + branch.join(""), branches: branches}
             }      
             isAttached = true;  
           score += (scoreWord(branch) + addends[addends.length - 1]) * 
@@ -644,13 +648,13 @@
     }
     
     if (stem.length > 1 && !dictionary.includes(stem.join("").toUpperCase())) {
-      return {score: NaN, error: "Invalid word: " + stem.join("")}
+      return {score: NaN, error: "Invalid stem word: " + stem.join("")}
     }
     if (stem.length > 1) {
       score += (scoreWord(stem) + addends.reduce((i, j) => i + j)) * 
           factors.reduce((i, j) => i * j);
     }
-    return {score: score, error: "", word : stem.join("")}
+    return {score: score, error: "", word : stem.join(""), branches: branches}
 
   }
   
@@ -733,12 +737,12 @@
   }
   
   function swapTiles() {
-    alert("Sorry, this button isn't working yet!!\n\nLet Bennett know you want to swap tiles and we'll figure something out.")
+   // alert("Sorry, this button isn't working yet!!\n\nLet Bennett know you want to swap tiles and we'll figure something out.")
   }
   
   function submitPlay() {
     if (!(SE.score > 0)) {
-      alert("Sorry, this isn't a valid move.\n" + SE.error)
+     // alert("Sorry, this isn't a valid move.\n" + SE.error)
       return;
     }
     
