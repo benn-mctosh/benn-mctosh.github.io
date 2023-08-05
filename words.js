@@ -324,7 +324,7 @@
   }
   else {
     firstMove = false;
-    var tilesInPlay = tiles.replace(/-/g, "").split("").concat(p1hand).concat(p2hand);
+    var tilesInPlay = tilesString.replaceAll('-', "").split("").concat(p1hand).concat(p2hand);
     tlen = tilesInPlay.length
     for (let i = 0; i < tlen; i++) {
       cell = pot.indexOf(tilesInPlay[i]);
