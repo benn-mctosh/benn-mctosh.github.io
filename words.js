@@ -749,7 +749,8 @@
   }
   
   function swapTiles() {
-   // alert("Sorry, this button isn't working yet!!\n\nLet Bennett know you want to swap tiles and we'll figure something out.")
+   alert("Sorry, this button isn't working yet!!\n\nLet Bennett know you want to swap tiles and we'll figure something out.")
+   return false;
   }
   
   function submitPlay() {
