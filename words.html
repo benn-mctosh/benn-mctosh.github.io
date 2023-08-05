@@ -1,0 +1,102 @@
+<!-- 
+
+/* 
+- that we are putting tiles adjacent to other tiles
+- that our tiles are forming valid words
+- whether our tiles are in a single row/column
+*/
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" sizes="192x192" href="pics/favicosahedron.png">
+  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="stylesheet" href="styles/W3.css">
+  <title>Words</title>
+  <meta property="og:title" content="Words"/>
+  <meta property="og:description" content="Graduate student in the History of Science, Medicine, and Technology at UW-Madison"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+<body class="w3-khaki">
+
+  <!-- header -->
+  <div class="w3-row w3-bar w3-light-blue w3-top">
+  <a href="#contact" class="w3-bar-item w3-button w3-hover-pale-blue w3-hide-small">Contact</a>
+  <a href="#research" class="w3-bar-item w3-button w3-hover-pale-blue">Research</a>
+  <a href="https://blog.bennettmcintosh.com" class="w3-bar-item w3-button w3-hover-pale-blue">Blog</a>
+  <a href="#writing" class="w3-bar-item w3-button w3-hover-pale-blue">Writing</a>
+  <a href="cv" class="w3-bar-item w3-button w3-hover-pale-blue">CV</a>
+  </div>
+
+
+  <div class="w3-row" style="padding-top:50px" id=contact>
+    
+    <div class="w3-container w3-white w3-col l6" style="padding:0;margin-left:50px;max-height:600px;min-height:600px;min-width:600px;max-width:600px;box-shadow:5px 5px #ccccaa">
+
+      <canvas width ="600px" height="600px" class="gameBoard" id="board" style="padding:0">
+        This game may not be accessible with older web browsers or when using assistive technology like screen readers. If you are seeing this while using assistive technology, I'm sorry. If you are not using assistive technology, please update your browser to play. 
+      </canvas>
+      
+    </div>
+        
+    <div class="w3-col l4 w3-white w3-container w3-center" style="margin-top:30px;margin-left:50px;max-width:600px;box-shadow:5px 5px #ccccaa" id="scoreboard">
+      <div id=gameStats class="w3-row w3-center">
+      </div>
+      <div id=rackRow class="w3-row w3-center"> 
+        <canvas width="300px" height="50px" id="rack" style="padding:0">
+          This game may not be accessible with older web browsers like Internet Explorer or when using assistive technology like screen readers. If you are seeing this while using assistive technology, I'm sorry. If you are not using assistive technology, please update your browser to play. 
+        </canvas>
+      </div>
+        <canvas hidden width="315px" height="105px" id="keyboard" style="padding:0">
+          This game may not be accessible with older web browsers like Internet Explorer or when using assistive technology like screen readers. If you are seeing this while using assistive technology, I'm sorry. If you are not using assistive technology, please update your browser to play. 
+        </canvas>
+      <div class="w3-row w3-center">
+        <a onclick="shuffleTiles(rackctx)" href="#" id="shuffle" style="margin:10px;width:155px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">🔀 Shuffle Hand</a>
+        <a onclick="clearTiles(rackctx)" href="#" id="clear" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">↪️ Clear Placed Tiles</a>
+      </div>
+      <div class="w3-row w3-center">
+        <a onclick="swapTiles()" href="" id="swap" style="margin:10px;width:155px" class="w3-center w3-hover-pale-red w3-button w3-red">🆎 Discard / Pass</a>
+        <a onclick="submitPlay()" href="#" id="play" style="margin:10px;width:185px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">☑️ Play for -- points</a>
+      </div>
+      <div class="w3-row w3-center">
+        <input hidden type="checkbox" id="checker" name="checker" value="playCheckerOn">
+        <label hidden for="checker">Check plays as you go</label><br>
+        <input hidden type="checkbox" id="fullRules" name="fullRules" value="playCheckerOn">
+        <label hidden for="fullRules">Show full rules</label><br>
+      </div>   
+    </div>
+    
+    <div hidden class="w3-col l4 w3-white w3-container w3-center" style="margin-top:30px;margin-left:50px;max-width:600px;box-shadow:5px 5px #ccccaa" id="tileSwapper"> </div>
+    
+    <div hidden class="w3-col l4 w3-white w3-container w3-center" style="margin-top:30px;margin-left:50px;max-width:600px;box-shadow:5px 5px #ccccaa" id="confirmation"> 
+      <p id="congrats">Congratulations! You played <node id="playedWord">__</node> for <node id="scoredPoints">###</node> points!</p>
+      <p id="newScore">The score is now #1 (you) to #2 (your opponent)</node>.</p>
+      <p id="emailInstruct">Please click on this button to send an email to your opponent so they can make their move:</p>
+      <a href="" id="sendEmail" target="_blank" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">✉️ Send Email</a>
+      <p>If that button doesn't work, you can copy and paste the text below:</p>
+      <div id="emailText" style="margin-bottom:20px;padding:10px;font:14px courier;text-align:left!important;" class="w3-left w3-light-gray">
+        <p>Hi Bennett,</p><p>
+        I've made my move in our Words game! I played XXXX for ## points, so you are now YYYYY, ### – ###.</p><p>
+        To make your move, click this link, or copy it into your navigation bar.</p><p>
+        <a href="https://bennettmcintosh.com/words?seed=IABI_OM-0-OGFDVEG-08-112-AB-111&p1=Bennett&p2=Carolyn">https://bennettmcintosh.com/words?seed=IABI_OM-0-OGFDVEG-08-112-AB-111&p1=Bennett&p2=Carolyn</a></p><p>
+        Happy word-making!</p>
+    </p>
+    </div>
+    </div>
+    
+    
+  </div>
+
+
+<script type="text/javascript" src=loadDict.js></script>
+
+<script type="text/javascript" src="words.js"></script>
+</body>
+</html>
+
+
