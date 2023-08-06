@@ -56,11 +56,11 @@
           This game may not be accessible with older web browsers like Internet Explorer or when using assistive technology like screen readers. If you are seeing this while using assistive technology, I'm sorry. If you are not using assistive technology, please update your browser to play. 
         </canvas>
       <div class="w3-row w3-center">
-        <a onclick="shuffleTiles(rackctx)" href="#" id="shuffle" style="margin:10px;width:155px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">🔀 Shuffle Hand</a>
-        <a onclick="clearTiles(rackctx)" href="#" id="clear" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">↪️ Clear Placed Tiles</a>
+        <a onclick="shuffleTiles(rackctx)" href="#" id="shuffle" style="margin:10px;width:155px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">🔀 Shuffle Rack</a>
+        <a onclick="clearTiles(rackctx)" href="#" id="clear" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">↪️ Put all Tiles Back</a>
       </div>
       <div class="w3-row w3-center">
-        <a onclick="swapTiles()" href="" id="swap" style="margin:10px;width:155px" class="w3-center w3-hover-pale-red w3-button w3-red">🆎 Discard / Pass</a>
+        <a onclick="swapTiles()" href="" id="swap" style="margin:10px;width:155px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">🆎 Discard / Pass</a>
         <a onclick="submitPlay()" href="#" id="play" style="margin:10px;width:185px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">☑️ Play for -- points</a>
       </div>
       <div class="w3-row w3-center">
