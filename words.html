@@ -104,7 +104,13 @@
             <td></td>
           </tr>          
         </table>  
-
+        <ul hidden id="instructions" style="text-align:left!important;">
+          <li>Form words by clicking in the tiles in your hand, then clicking on the board to place the tiles.</li>
+          <li>Once you have made a word, the “Play” button above will turn green — click the “Play” button, and you will be able to generate an email to send to your opponent so they can make their next move</li>
+          <li>You can look up words in the official Scrabble dictionary (which may be slightly different from the dictionary I’m using) or see how many tiles of each letter there are in this game using the links above. </li>
+          <li>Some tiles are blank (‘_’). These are worth no points, but when you select them you can change which letter they represent. Once you have played a blank tile, it represents the same letter for all future moves, but it will show up as red and lowercase, and continue to be worth 0 points.</li>
+        </ul>
+        <p><a href="#" onclick="toggleInstructions()">Show/hide instructions</a></p>
         <input hidden type="checkbox" id="checker" name="checker" value="playCheckerOn">
         <label hidden for="checker">Check plays as you go</label><br>
         <input hidden type="checkbox" id="fullRules" name="fullRules" value="playCheckerOn">

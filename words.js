@@ -317,6 +317,7 @@
   var firstMove;
   if (seed == "-0--0-225") {
     firstMove = true;
+    toggleInstructions();
     ret = sample(pot, 14);
     pot = ret[0];
     p1hand = ret[1];
@@ -694,6 +695,16 @@
     k.setAttribute("hidden", false)
   } 
   
+  function toggleInstructions() {
+    let ds = document.getElementById("instructions")
+    if (ds.hasAttribute("hidden")) {
+      ds.removeAttribute("hidden");
+    }
+    else {
+      ds.setAttribute("hidden", false)
+    }
+  }
+  
   function toggleLetterCount() {
     let tc = document.getElementById("tilecounter")
     if (tc.hasAttribute("hidden")) {
@@ -702,9 +713,7 @@
     else {
       tc.setAttribute("hidden", false)
     }
-
-  }
-  
+  }  
   function reviseScore() {
       letters.length = 0;
       cells.length = 0;
