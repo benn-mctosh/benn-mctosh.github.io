@@ -26,11 +26,9 @@
 
   <!-- header -->
   <div class="w3-row w3-bar w3-light-blue w3-top">
-  <a href="#contact" class="w3-bar-item w3-button w3-hover-pale-blue w3-hide-small">Contact</a>
-  <a href="#research" class="w3-bar-item w3-button w3-hover-pale-blue">Research</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-hover-pale-blue w3-hide-small">Home</a>
+  <a href="words.html" class="w3-bar-item w3-button w3-hover-pale-blue">New Game</a>
   <a href="https://blog.bennettmcintosh.com" class="w3-bar-item w3-button w3-hover-pale-blue">Blog</a>
-  <a href="#writing" class="w3-bar-item w3-button w3-hover-pale-blue">Writing</a>
-  <a href="cv" class="w3-bar-item w3-button w3-hover-pale-blue">CV</a>
   </div>
 
 
@@ -56,11 +54,11 @@
           This game may not be accessible with older web browsers like Internet Explorer or when using assistive technology like screen readers. If you are seeing this while using assistive technology, I'm sorry. If you are not using assistive technology, please update your browser to play. 
         </canvas>
       <div class="w3-row w3-center">
-        <a onclick="shuffleTiles(rackctx)" href="#" id="shuffle" style="margin:10px;width:155px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">🔀 Shuffle Rack</a>
-        <a onclick="clearTiles(rackctx)" href="#" id="clear" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">↪️ Put all Tiles Back</a>
+        <a onclick="clearTiles(rackctx)" href="#" id="clear" style="margin:10px;width:155px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">↪️ Reset Rack</a>
+        <a onclick="shuffleTiles(rackctx)" href="#" id="shuffle" style="margin:10px;width:185px" class="w3-center w3-hover-pale-blue w3-button w3-light-blue">🔀 Shuffle Rack</a>
       </div>
       <div class="w3-row w3-center">
-        <a onclick="swapTiles()" href="" id="swap" style="margin:10px;width:155px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">🆎 Discard / Pass</a>
+        <a onclick="swapTiles()" href="#" id="swap" style="margin:10px;width:155px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">🆎 Discard / Pass</a>
         <a onclick="submitPlay()" href="#" id="play" style="margin:10px;width:185px;text-decoration:none!important;" class="w3-center w3-hover-light-gray w3-button w3-light-gray">☑️ Play for -- points</a>
       </div>
       <div class="w3-row w3-center">

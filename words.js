@@ -108,10 +108,10 @@
   
   **********************/  
   // initialize bonuses; triple/double [L/l]etters or [W/w]ords
-  const bonuses = ['W','.','.','.','.','.','.','W','.','.','.','.','.','.','W',
+  const bonuses = ['W','.','.','l','.','.','.','W','.','.','.','l','.','.','W',
                    '.','.','w','.','.','.','l','.','l','.','.','.','w','.','.',
                    '.','w','.','.','.','L','.','.','.','L','.','.','.','w','.',
-                   '.','.','.','.','w','.','.','l','.','.','w','.','.','.','.',
+                   'l','.','.','.','w','.','.','l','.','.','w','.','.','.','l',
                    '.','.','.','w','.','.','.','.','.','.','.','w','.','.','.',
                    '.','.','L','.','.','.','l','.','L','.','.','.','L','.','.',
                    '.','l','.','.','.','L','.','.','.','l','.','.','.','l','.',
@@ -119,10 +119,10 @@
                    '.','l','.','.','.','l','.','.','.','L','.','.','.','l','.',
                    '.','.','L','.','.','.','L','.','l','.','.','.','L','.','.',
                    '.','.','.','w','.','.','.','.','.','.','.','w','.','.','.',
-                   '.','.','.','.','w','.','.','l','.','.','w','.','.','.','.',
+                   'l','.','.','.','w','.','.','l','.','.','w','.','.','.','l',
                    '.','w','.','.','.','L','.','.','.','L','.','.','.','w','.',
                    '.','.','w','.','.','.','l','.','l','.','.','.','w','.','.',
-                   'W','.','.','.','.','.','.','W','.','.','.','.','.','.','W']    
+                   'W','.','.','l','.','.','.','W','.','.','.','l','.','.','W']    
 
   // get the point value of any given letter
   function getValue(letter) {
@@ -382,15 +382,15 @@
     var scoretext = document.createTextNode("You are currently " + status + 
                          ", " + p1score + " – " + p2score + ", against " + p2name + ".");
     var tiletext = document.createTextNode(pot.length + 
-                        " tiles left in the pot, plus " + p2hand.length + " tiles in " +
-                        p2name +"'s hand.")
+                        " tiles left in the pot & " + p2hand.length + " tiles on " +
+                        p2name +"'s rack.")
   }
   else {
     var scoretext = document.createTextNode("You are currently " + status + 
                          ", " + p1score + " – " + p2score + ".");
     var tiletext = document.createTextNode(pot.length + 
-                        " tiles left in the pot, plus " + p2hand.length + " tiles in " +
-                        "your opponent's hand.")
+                        " tiles left in the pot, & " + p2hand.length + " tiles on " +
+                        "your opponent's rack.")
   }
   const scorepara = document.createElement("p");
   scorepara.appendChild(scoretext) 
@@ -763,7 +763,7 @@
   
   function submitPlay() {
     if (!(SE.score > 0)) {
-     // alert("Sorry, this isn't a valid move.\n" + SE.error)
+     alert("Sorry, this isn't a valid move.\n" + SE.error)
       return;
     }
     
