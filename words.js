@@ -599,7 +599,7 @@
   const tiles = decodeTiles(args[4])
   
   // set up the pot
-  var pot = ("JQZX" + "KFWYCV".repeat(2) + "_BMFP".repeat(3) + "TRSD".repeat(4) +
+  var pot = ("JQZX" + "KFWYCV".repeat(2) + "BMFP".repeat(3) + "TRSD_".repeat(4) +
      "NLHG".repeat(5) + "U".repeat(6) + "AIO".repeat(9) + "E".repeat(14)).split("");
   
   if (seed == "-0--0-225") {
@@ -614,7 +614,12 @@
     var tilesInPlay = args[4].replace(/[0-9]/g, '').split("").concat(p1hand).concat(p2hand);
     let tlen = tilesInPlay.length
     for (let i = 0; i < tlen; i++) {
-      cell = pot.indexOf(tilesInPlay[i]);
+      if (tilesInPlay[i].toLowerCase() == tilesInPlay[i]) {
+        cell = pot.indexOf("_");
+      }
+      else {
+        cell = pot.indexOf(tilesInPlay[i])
+      }
       pot.splice(cell, 1);
     }
   }
