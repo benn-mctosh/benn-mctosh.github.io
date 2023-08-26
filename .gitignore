@@ -1,7 +1,6 @@
 
 data
 template.html
-files
 pics
 archive/*
 bearstyle.css
@@ -19,3 +18,4 @@ linklist/linklist.txt
 cvtable.txt
 linklist/*
 
+cv2.html
