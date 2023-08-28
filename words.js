@@ -290,11 +290,11 @@
         // // alert(stem[i])
         // // alert(cell)
         let branch = findBranch(stem[i], cell, "v")
-        branches.push(branch)
+        // branches.push(branch)
         // if (!dictionary.includes(branch.join("").toUpperCase())) {
           // return {score: NaN, error: "invalid word: " + branch.join("")}
         // }
-        if (branch.length != 0) {
+        if (branch.length > 1) {
           // alert("v branch: " + branch + " of length " + branch.length)
 
            // alert("branch: " + branch)
@@ -344,9 +344,9 @@
         // // alert(stem[i])
         // // alert(cell)
         let branch = findBranch(stem[i], cell, "h")
-        branches.push(branch)
+        // branches.push(branch)
 
-        if (branch.length != 0) {
+        if (branch.length > 1) {
           // alert("h branch: " + branch + " of length " + branch.length)
             if (!dictionary.includes(branch.join("").toUpperCase())) {
               return {score: NaN, error: "Invalid branch word: " + branch.join(""), branches: branches}
