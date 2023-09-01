@@ -6,7 +6,8 @@
   let params = new URLSearchParams(location.search);
   var seed = params.get('seed')
   if (seed == null) {
-    seed = '-0--0-225';
+    seed = 'qqqqqq-qqqqqq-0-0-225'; 
+    //this would decrypt to "" but is handled by an if statement anyway
   }
   const p1name = params.get('p1')
   const p2name = params.get('p2')
@@ -591,18 +592,18 @@
   ctx.fillRect(0, 0, width, height);
   ctx.strokeStyle = shadow;
   
-  const args = seed.split("-");
-  var p1hand = decrypt(args[0]);
-  const p1score = parseInt(args[1]);
-  var p2hand = decrypt(args[2]);
-  const p2score = parseInt(args[3]);
-  const tiles = decodeTiles(args[4])
+  var p1hand = decrypt(seed.slice(0,6));
+  var p2hand = decrypt(seed.slice(7,13));
+  const args = seed.slice(14,seed.length).split("-");
+  const p1score = parseInt(args[0]);
+  const p2score = parseInt(args[1]);
+  const tiles = decodeTiles(args[2])
   
   // set up the pot
   var pot = ("JQZX" + "KFWYCV".repeat(2) + "BMFP".repeat(3) + "TRSD_".repeat(4) +
      "NLHG".repeat(5) + "U".repeat(6) + "AIO".repeat(9) + "E".repeat(14)).split("");
   
-  if (seed == "-0--0-225") {
+  if (seed == "qqqqqq-qqqqqq-0-0-225") {
     firstMove = true;
     toggleInstructions();
     ret = sample(pot, 14);
@@ -611,7 +612,7 @@
     p2hand = p1hand.splice(0, 7);
   }
   else {
-    var tilesInPlay = args[4].replace(/[0-9]/g, '').split("").concat(p1hand).concat(p2hand);
+    var tilesInPlay = args[2].replace(/[0-9]/g, '').split("").concat(p1hand).concat(p2hand);
     let tlen = tilesInPlay.length
     for (let i = 0; i < tlen; i++) {
       if (tilesInPlay[i].toLowerCase() == tilesInPlay[i]) {
@@ -817,7 +818,7 @@
     
     let c = 0
     boardcode = []
-    boardcode.push(encrypt(p2hand), p2score, encrypt(newHand), (p1score + SE.score), encodeTiles(tiles))
+    boardcode.push(encrypt(p2hand), encrypt(newHand), p2score, (p1score + SE.score), encodeTiles(tiles))
     newSeed = boardcode.join("-");
     if (p1name != null) {var name1 = "&p1=" + p2name;}
     else {var name1 = ""}
