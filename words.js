@@ -169,6 +169,11 @@
     };
   }
   
+    
+  function compareTile(a,b) {
+    return a.i - b.i
+  }
+  
   function scoreWord(word) {
     var score = 0;
     for (let i = 0; i < word.length; i++) {
@@ -708,7 +713,7 @@
       hand[i].i = newPos[i];
       hand[i].placeTile(ctx, -1);
     }
-    hand.sort( compare );
+    hand.sort( compareTiles );
   } 
 //  document.getElementById("shuffle").addEventListener("click", alert("clicked shuffle"));
    
