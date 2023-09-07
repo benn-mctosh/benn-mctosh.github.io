@@ -170,7 +170,7 @@
   }
   
     
-  function compareTile(a,b) {
+  function compareTiles(a,b) {
     return a.i - b.i
   }
   
