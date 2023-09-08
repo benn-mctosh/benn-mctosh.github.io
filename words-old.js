@@ -1,12 +1,17 @@
+  // test seed = 'PLAYER_-0-PLAYER_-0-110-HeLLQ-110'; 
   // add options to pass and play (by changing play button - current task)
+  // add encrypter for hands
+  // generate email and mailto link
+  // low-priority: fix bug where attaching a blank on a blank is invalid
   let params = new URLSearchParams(location.search);
   var seed = params.get('seed')
   if (seed == null) {
     seed = 'qqqqqq-qqqqqq-0-0-225'; 
-    //this would decrypt to "" in each hand but is handled by an if statement anyway
+    //this would decrypt to "" but is handled by an if statement anyway
   }
   const p1name = params.get('p1')
   const p2name = params.get('p2')
+  // when encrypted, 'PLAYER_' should read 'jvobAY'
   const board = document.querySelector(".gameBoard");
   
   /**********************
@@ -104,10 +109,6 @@
     
   }
   
-  function compareTile(a,b) {
-    return a.i - b.i
-  }
-  
   function encodeTiles(t) {  
     let c = 0
     tlen = t.length
@@ -166,6 +167,11 @@
       x: evt.clientX - rect.left,
       y: evt.clientY - rect.top
     };
+  }
+  
+    
+  function compareTiles(a,b) {
+    return a.i - b.i
   }
   
   function scoreWord(word) {
@@ -707,7 +713,7 @@
       hand[i].i = newPos[i];
       hand[i].placeTile(ctx, -1);
     }
-    hand.sort( compareTile );
+    hand.sort( compareTiles );
   } 
 //  document.getElementById("shuffle").addEventListener("click", alert("clicked shuffle"));
    
@@ -753,7 +759,7 @@
       }
       SE = score(letters, cells);
       let b = document.getElementById("play")
-      if (SE.score > -1) {
+      if (SE.score > 0) {
         b.classList.remove("w3-light-gray")
         b.classList.add("w3-green")
         let text = ("✅ Play for " + SE.score + " points!")
@@ -790,7 +796,7 @@
   }
   
   function submitPlay() {
-    if (!(SE.score > -1)) {
+    if (!(SE.score > 0)) {
      alert("Sorry, this isn't a valid move.\n" + SE.error)
       return;
     }
