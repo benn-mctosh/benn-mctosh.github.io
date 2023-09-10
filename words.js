@@ -1,4 +1,6 @@
-  // add options to pass and play (by changing play button - current task)
+  // add options to pass 
+  // disallow single-letter play on first move
+  
   let params = new URLSearchParams(location.search);
   var seed = params.get('seed')
   if (seed == null) {
@@ -41,9 +43,9 @@
   const vYpad = 15;
   const bXpad = 5;
   const bYpad = 28;
-  const keyWidth = 35; 
-  const keyHeight = 35;
-  const keyFont = "28px courier";
+  const kWid = 35; 
+  const kHite = 35;
+  const kFont = "28px courier";
   const kXpad = 5;
   const kYpad = 24;
   const keyList = "abcdefghijklmnopqrstuvwxyz_".split("")  
@@ -203,7 +205,7 @@
     const branchWord = [letter];
     let head = cell - m;
     let tail = cell + m;
-    while (head > MIN) {
+    while (head >= MIN) {
       if (tiles[head] == "-") { 
         // alert("found head at " + head + " word is "  + word)
         break; 
@@ -370,9 +372,16 @@
     if (stem.length > 1) {
       score += (scoreWord(stem) + addends.reduce((i, j) => i + j)) * 
           factors.reduce((i, j) => i * j);
-    }
-    return {score: score, error: "", word : stem.join(""), branches: branches}
+      return {score: score, error: "", word : stem.join(""), branches: branches}
 
+    }
+    else if (branches.length == 0) {
+      return {score: NaN, error: "Single-letter words are not valid"}
+    }
+    else {
+      return {score: score, error: "", word: branches[0].join(""), branches: [stem]}
+    
+    }
   }
   
   /**********************
@@ -564,17 +573,17 @@
     ctx.fillStyle = red;
     ctx.strokeStyle = "rgb(255, 255, 255)";
     ctx.strokeRect(0, 0, 315, 105)
-    ctx.font = keyFont;
+    ctx.font = kFont;
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 9; j++) {
-        x = keyWidth * j
-        y = keyHeight * i
+        x = kWid * j
+        y = kHite * i
         if (keyList[i*9 + j] == hand[currTileIndex].letter) {
           ctx.fillStyle = brown;
-          ctx.fillRect(x, y, keyWidth, keyHeight);
+          ctx.fillRect(x, y, kWid, kHite);
           ctx.fillStyle = red;
         }
-        ctx.strokeRect(x, y, keyWidth, keyHeight)
+        ctx.strokeRect(x, y, kWid, kHite)
         ctx.fillText(keyList[i * 9 + j], x + kXpad, y + kYpad)
       }
     }     
@@ -810,6 +819,13 @@
         }
       else {newHand.push('_');}
     }
+    
+    if (pot.length == 0 && newHand.length == 0) {
+      // add score from play and from opponent's hand
+      // 
+      // status => won/lost/tied
+    }
+    
     drawResult = sample(pot, Math.min(pot.length, 7 - newHand.length))
     newTiles = drawResult[1]
     pot = drawResult[0]
@@ -880,8 +896,8 @@
     if (t < 0) { return; }
     if (hand[t].letter == hand[t].letter.toLowerCase()) {
       let xy = getMousePos(document.getElementById("keyboard"), event);
-      let row = Math.floor(xy.x / keyWidth);
-      let col = Math.floor(xy.y / keyHeight);
+      let row = Math.floor(xy.x / kWid);
+      let col = Math.floor(xy.y / kHite);
       let i = row + 9 * col;
       hand[t].letter = "abcdefghijklmnopqrstuvwxyz_"[i];
       if (hand[t].isOnBoard) { hand[t].placeTile(ctx, hand[t].oldCell); }
