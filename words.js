@@ -621,7 +621,7 @@
   const tiles = decodeTiles(args[2])
   
   // set up the pot
-  var pot = ("JQZX" + "KFWYCV".repeat(2) + "BMFP".repeat(3) + "TRSD_".repeat(4) +
+  var pot = ("JQZX" + "KFWYCV".repeat(2) + "BMFP_".repeat(3) + "TRSD".repeat(4) +
      "NLHG".repeat(5) + "U".repeat(6) + "AIO".repeat(9) + "E".repeat(14)).split("");
   
   if (seed == "qqqqqq-qqqqqq-0-0-225") {
