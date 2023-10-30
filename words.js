@@ -885,7 +885,6 @@
           SE.word += l[0].letter; 
       }
       p1hand.push(...newTiles);
-      alert(p1hand);
       let ts = document.getElementById("tileSwapper");
       ts.setAttribute("hidden", false); 
       submitPlay();
