@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" sizes="192x192" href="pics/favicosahedron.png">
+  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="stylesheet" href="../styles/W3.css">
+  <title>Character Sheet | Eat God</title>
+  <meta property="og:title" content="Eat God"/>
+  <meta property="og:description" content="A fun game, I hope"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+<body class="w3-khaki" style="font-family: 'Georgia', serif!important;">
+
+  <!-- header -->
+
+  <div class="w3-row w3-khaki w3-container" style="padding-top:10px;padding-bottom:50px;max-width:1000px">
+  
+  <div style="padding-left:30px;">
+  <h3>Build yourself a God-eater!</h3>
+  <p>This is a character sheet for <a target="_blank" href="https://penguinking.com/eat-god">Eat God from Penguin King Games</a> adapted <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">under CC BY 4.0</a>.</p>
+  <details><summary>How do I use this?</summary>This sheet will let you   to generate a random God-eater, or fill in the fields yourself.<br><br>
+  <b>Generating your character:</b> Click <a href="#!" onclick="randomAll()">here</a> to randomly fill the entire sheet. You can click the  🎲 next to a field to re-roll just that option, or click the  🎲 🎲 at the top of a section to re-roll that entire section. You can also manually adjust any options you desire, and customize your Creed, Appearance, and Inventory.<br><br>
+  <b>Learning the rules:</b> Wherever you see a [⚠️] you can click it for some introductions or reminders about the rules, but the rules are best learnt at Eat God's home, <a target="_blank" href="https://penguinking.com/eat-god">here</a>.<br><br>
+  <b>Playing your character:</b> You can use the browser version of this sheet for playing Eat God—it lets you update your inventory, stress, and obstinancy—but <u>it won't save your work</u>. Ideally, though, it’s printable—try printing with the minimum margins, and at an 80% zoom level. </details><a href="#!" onclick="randomAll()">Generate a random God-eater</a> | <a href="#!" onclick="clearAll()">Clear sheet</a>
+  </div>
+  
+  <div class="w3-row w3-white" style="padding-top:40px;padding-left:40px;box-shadow:5px 5px #ccccaa">
+  
+  <!-- size -->
+
+    <div class="w3-container w3-col m5 l5 w3-white"  id="name-size">
+      <h4>Name</h4>   
+      <input id="name"></input>
+      <details style="max-width:400px;font-size:12px"><summary>⚠️ Guard your True Name carefully.</summary><i>God-eaters customarily keep their true names secret, adopting formal names drawn from classics of philosophy, subtle poetic allusions, and the sayings of great heroes. These names range from a handful of words to a full paragraph in length, and are accompanied by a short form of no more than three syllables for everyday use.. The default assumption is that each God-eater in a particular group knows the true names of all other members of that group unless you explicitly decide otherwise. You need not decide what your God-eater's true name is or communicate it to the other players for their characters to know it. <a href="https://penguinking.com/eat-god/eat-god-0.3.html#your-name" target="_blank">[more about names]</a></i></details>         
+      <h4>Size <a href="#!" onclick="randomSize()">🎲🎲</a></h4>
+      <details style="max-width:400px;font-size:12px"><summary>⚠️ How big is a God-eater?</summary><i>You are about the size of a racoon: your height will ususally be between 1 foot and 2’6”, while your weight will usually be between 12 and 34 lbs. <a href="https://penguinking.com/eat-god/eat-god-0.3.html#your-size" target="_blank">[more about size]</a></i></details>
+      <p>Height: <input type="number" style="width:60px" id="height"></input> inches <a href="#!" onclick="randomHeight()"> 🎲</a></p>
+      <p>Weight: <input type="number" style="width:60px" id="weight"></input> pounds <a href="#!" onclick="randomWeight()"> 🎲</a></p>
+      <p style="font-size:12px;max-width:300px"><i>Note that some traits (Fast Feet, Firm Flesh, & Unusual Size) can affect your size.</i></p>
+      
+    </div>     
+
+  <!-- Facets -->
+
+    <div class="w3-container w3-col m7 l5 w3-white"  id="facets">
+      <h4>Stress & Obstinancy <a href="#!" onclick="resetSnO()">[⟳ reset]</a></h4>
+      <details style="font-size:12px;"><summary>⚠️ Self-help tips</summary><b>Stress</b> is kinda like Hit Points—any damage, physical or emotional, causes you to accumulate stress, until you hit your stress limit of 9 and are stressed out (incapacitated) <a href="https://penguinking.com/eat-god/eat-god-0.3.html#stress-and-stressing-out" target="_blank">[more about stress]</a>.<br><b>Obstinacy</b> is a kind of “try harder” button: you can spend obstinancy to roll an additional die when you make a test, increasing the odds of both success and cataclysm <a href="https://penguinking.com/eat-god/eat-god-0.3.html#obstinacy-and-the-rebellious-arts" target="_blank">[more about obstinacy]</a>.</details>
+      <p><a href="#!" onclick="resetStress()">⟳</a> Stress: <input type="number" value="" style="width:60px" id="stress"></input> / 9 </p>
+      <p><a href="#!" onclick="resetObs()">⟳</a> Obstinancy: <input type="number" value="3" style="width:40px" id="obstinancy"></input></p>
+      
+      <h4>Facets <a href="#!" onclick="randomFacets()">🎲🎲</a></h4>
+      <details style="max-width:400px;font-size:12px"><summary>⚠️ It’s all Greek to me?</summary><i><p>Your God-eater's Facets are the core of your mastery and the means through which you assert your will upon the cosmos. Each Facet is both a way of being and a way of relating to the world around you – and, most importantly, when rolling a test, the most relevant Facet provides the target number. Use the dice to roll, or pick from one of these four standard arrays: 7/5/3, 7/4/4, 6/6/3, 6/5/4.</p>
+      <p><b>Ethos</b> rules your acts of skill—it’s used to act with care and diligence, to anticipate danger and consequences, and to get people to do what you want by presenting yourself as trustworthy and reasonable. </p>
+      <p><b>Pathos</b> rules your acts of passion—it’s used to act with force and spontaneity, to resist social pressure, and to get people to do what you want by inspiring, intimidating, and appealing to the baser urges. </p>
+      <p><b>Logos</b> rules your acts of cunning—it’s used to act with strategy and guile, to pierce deceptions, and to get people to do what you want with clever arguments that confuse your foes, your allies, and occasionally yourself.</p>
+      <p>If your score in one of these is lower or higher than the norm (5) you may select an adjective to help you role-play a character with such a talented or flawed facet of their character. <a href="https://penguinking.com/eat-god/eat-god-0.3.html#facets-and-philosophy" target="_blank">[more about facets]</a></p></i></details>
+      <p>Ethos:&nbsp;<input style="width:20px" id="ethos" onchange="fsumCheck()"></input> <span hidden id="ethosMore">– <select id="ethosAdj"></select> <a href="#!" onclick="randAdj('ethosAdj')"> 🎲</a></span></p>
+      <p>Pathos:&nbsp;<input style="width:20px" id="pathos" onchange="fsumCheck()"></input> <span hidden id="pathosMore">– <select id="pathosAdj"></select> <a href="#!" onclick="randAdj('pathosAdj')"> 🎲</a></span></p>
+      <p>Logos:&nbsp;<input style="width:20px" id="logos" onchange="fsumCheck()"></input> <span hidden id="logosMore">– <select id="logosAdj"></select> <a href="#!" onclick="randAdj('logosAdj')"> 🎲</a></span></p>
+      <p hidden id="facetWarn" style="font-size:12px;color:rgb(255,0,0);">Your facets should be chosen from one of the following arrays: 7/5/3, 7/4/4, 6/6/3, or 6/5/4.</p>
+  </div>   
+  </div>
+
+    <!-- traits -->
+       
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">
+      <div class="w3-container w3-col m12 l10 w3-white"  id="traits">
+        <h4>Traits <a href="#!" onclick="randomTraits()">🎲🎲</a></h4>
+        <details style="max-width:700px;font-size:12px"><summary>⚠️ What’re these?</summary><p><i>Traits give you two benefits. First, you can do whatever the Trait says you can. Second, when you Make a Test that you can bring the Trait to bear on (that is, “Tag” that Trait), you get to roll an extra die—increasing the chance of both success and of cataclysm. The actions a Trait lets you do “with effort” are “Effortful”; you can only maintain one “Effortful” effect at once, whether from Traits, Rebellious Arts, or something else <a href="https://penguinking.com/eat-god/eat-god-0.3.html#traits" target="_blank">[more about Traits]</a>.</i></p>
+        <p><i>Some traits have additional options, flagged by language like “[roll or choose...]” in the description and the appearance of an additional dropdown menu.</i></p></details>
+      </div>
+    </div>
+    
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+      <div class="w3-container w3-col m12 l3 w3-white">      
+      <p><select id="selectT1" onChange="updateTrait('selectT1')"></select><a href="#!" onclick="randT('selectT1')"> 🎲</a></p>  
+      <p hidden id="moreT1">⮑ <select id="optT1"></select><a href="#!" onclick="randOpt('optT1')"> 🎲</a></p>        
+      </div>
+      <div class="w3-container w3-col m12 l7 w3-white">
+            
+        <p id="explainT1">[Select Trait 1 from the dropdown]</p>
+
+      </div>    
+    </div>
+    
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+      <div class="w3-container w3-col m12 l3 w3-white">      
+      <p><select id="selectT2" onChange="updateTrait('selectT2')"></select><a href="#!" onclick="randT('selectT2')"> 🎲</a></p>
+      <p hidden id="moreT2">⮑ <select id="optT2"></select><a href="#!" onclick="randOpt('optT2')"> 🎲</a></p>      
+      </div>
+      <div class="w3-container w3-col m12 l7 w3-white">
+            
+        <p id="explainT2">[Select Trait 2 from the dropdown]</p>
+        
+      </div>    
+    </div>
+    
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+      <div class="w3-container w3-col m12 l3 w3-white">      
+      <p><select id="selectT3" onChange="updateTrait('selectT3')"></select><a href="#!" onclick="randT('selectT3')"> 🎲</a></p>    
+      <p hidden id="moreT3">⮑ <select id="optT3"></select><a href="#!" onclick="randOpt('optT3')"> 🎲</a></p>       
+      </div>
+      <div class="w3-container w3-col m12 l7 w3-white">
+
+        <p id="explainT3">[Select Trait 3 from the dropdown]</p>
+             
+      </div>    
+    </div>    
+
+  <!-- rebellious arts -->
+     
+  <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">
+    <div class="w3-container w3-col m12 l10 w3-white"  id="rebellious-art">
+      <h4>Rebellious Art <a href="#!" onclick="randomArt()">🎲🎲</a></h4>
+      <details style="max-width:700px;font-size:12px"><summary>⚠️ Remember, sustaining any Art is Effortful</summary><p><i>What sets you apart from your peers and elevates you as a God-killing hero is not the strength of your arm or the keenness of your eye, but your initiation into the Rebellious Arts: esoteric discplines which allow you to see through a small part of the lie that God tells to the world.</i></p>
+      <p><i>Employing the Rebellious Arts is effortful; i.e., you may not activate an Art while sustaining another effortful effect, nor may you use another effortful effect while sustaining an Art. In addition, you must spend one point of Obstinacy each time an Art is activated.</i></p>
+      <p><i>The Arts don't require tests; however, if you use an Art in conjunction with a test, you may roll one extra die. This works like spending a point of Obstinacy to add a die to the test, and is subject to all the usual restrictions thereof. If an Art's effect is sustained, you may claim this benefit on any one test made under its auspices for each activation <a href="https://penguinking.com/eat-god/eat-god-0.3.html#rebellious-arts" target="_blank">[more about Rebellious Arts]</a>.</i></p></details>
+    </div>
+  </div>
+  
+  <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+    <div class="w3-container w3-col m12 l3 w3-white">      
+      <p>The Art of... </p>
+      <select id=selectArt>
+      </select>
+      <p class="w3-hide-medium w3-hide-small">&nbsp;</p>
+      
+    </div>
+    <div class="w3-container w3-col m12 l7 w3-white">
+          
+      <p id=artDetail>[Select an Art from the dropdown]</p>
+      
+    </div>    
+  </div>
+  
+  <!-- creeds -->
+  
+  <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">
+    <div class="w3-container w3-col m12 l10 w3-white"  id="creed">
+      <h4>Creed <a href="#!" onclick="randomCreed()">🎲🎲</a></h4>
+      <details style="max-width:700px;font-size:12px"><summary>⚠️ What does a God-eater believe?</summary><p><i>Something inspired you to take up the wandering, warrior-poet life of a God-eater. In one or two sentences, describe what you have against the Big Man in the Sky, and how you understand the heroic boon that is your Rebellious Art. <a href="https://penguinking.com/eat-god/eat-god-0.3.html#your-philosophy" target="_blank">[more about creeds]</a></i></p></details><p style="font-size:6px">&nbsp;</p>
+      
+    </div>
+  </div>
+  
+  <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+    <div class="w3-container w3-col m12 l3 w3-white">            
+      <select id=selectCreed>
+      </select>
+      <p class="w3-hide-medium w3-hide-small">&nbsp;</p>
+      
+    </div>
+    <div class="w3-container w3-col m12 l7 w3-white">
+          
+      <textarea id="customCreed" cols="50" rows="4">Select your creed from the dropdown or write your own...</textarea>
+
+    </div>    
+  </div>
+
+  
+  
+  <!-- appearance -->
+  <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">
+    <div class="w3-container w3-col m12 l10 w3-white"  id="appearance">
+      <h4>Appearance <a href="#!" onclick="randomFeatures()">🎲🎲</a></h4>
+    </div>
+  </div>
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+      <div class="w3-container w3-col m12 l3 w3-white">    
+<details style="max-width:400px;font-size:12px"><summary>⚠️ These are mostly cosmetic</summary><i>There’s no rule that explictily tags any of these features, but they’ll certainly affect how you present yourself in-game, and some might be the wrong vibe for your God-eater. So feel free to use the randomly-generated features as a guide, but change them at your whim!</i></details>
+      <p><select id="selectF1"></select><a href="#!" onclick="randF('selectF1')"> 🎲</a></p>
+      <p><select id="selectF2"></select><a href="#!" onclick="randF('selectF2')"> 🎲</a></p>
+      <p><select id="selectF3"></select><a href="#!" onclick="randF('selectF3')"> 🎲</a></p>
+      </div>
+      <div class="w3-container w3-col m12 l7 w3-white">
+      <textarea id="customFs" cols="50" rows="4">Need inspiration? Roll above for random features!</textarea>
+    </div>     
+  </div>
+  
+    <!-- inventory -->
+    <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">
+      <div class="w3-container w3-col m12 l10 w3-white">
+        <h4>Inventory <a href="#!" onclick="randomItems()">🎲🎲</a></h4>
+      </div>
+    </div>
+      <div class="w3-row w3-white" style="padding-left:40px;box-shadow:5px 5px #ccccaa">    
+        <div class="w3-container w3-col m12 l3 w3-white">    
+  <details style="max-width:400px;font-size:12px"><summary>⚠️ What’s in his pocketses?</summary><i>You usually have three inventory slots, but certain features give you more. Roll to get three random starting items. If you end up with a Catalyst, you can read about those <a href="https://penguinking.com/eat-god/eat-god-0.3.html#catalysts" target="_blank">here</a></i>.</details>
+        </div>
+        <div class="w3-container w3-col m12 l7 w3-white">
+        <textarea id="inventory" cols="50" rows="4"></textarea>
+      </div>     
+    </div>
+
+
+</div>
+  <!-- footer -->
+  <div class="w3-row w3-bar w3-light-blue">
+    <div class="w3-half w3">
+      <a target="_blank" href="https://penguinking.com/eat-god" class="w3-bar-item w3-button w3-hover-pale-blue w3-right">Adapted from Penguin King Games</a>
+    </div>
+    <div class="w3-half">
+      <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" class="w3-bar-item w3-button w3-hover-pale-blue">under CC BY 4.0</a>
+    </div>
+  </div>
+
+<script type="text/javascript" src="rebelliousArts.js"></script>
+
+<script type="text/javascript" src="sheet.js"></script>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+ document.addEventListener("DOMContentLoaded", function () {
+        /* do not run if browser lacks the antifeature */
+        if (navigator.getEnvironmentIntegrity === undefined)
+                return;
+        /* disable all CSS */
+        for (let elt of document.getElementsByTagName("link"))
+                elt.disabled = true;
+        /* replace body content */
+        var r1 = document.createElement("h1");
+        r1.appendChild(document.createTextNode("Your browser contains Google DRM!"));
+        var r2 = document.createElement("p");
+        r2.innerHTML = '“Web Environment Integrity” is a Google euphemism for DRM (digital restrictions management) that is designed to prevent ad-blocking and allow only browsers authorized by Google (as opposed to e.g. browsers on hobbyist or aftermarket operating systems). This will likely hurt both privacy (if Google and a few other big players get to decide which ads and trackers are “integral” to the “web environment”) and competition (if smaller browsers that do not implement this protocol are blocked from viewing many websites). <br><br>In support of an open web, this website does not function with browsers that utilize this kind of DRM. Please install a webbrowser such as <a href="https://invisible-island.net/lynx/lynx.html"><tt>lynx</tt></a> or <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> that better respects everyone’s freedom and supports ad blockers.<br><br>You can <a href="https://vivaldi.com/blog/googles-new-dangerous-web-environment-integrity-spec/">read more about this here</a>.<br><br>If you see this message, I would be grateful if you emailed <u>bennettmcintosh ат duck dот com</u>, to help me keep track of how common this sort of DRM has become.';
+        document.getElementsByTagName('body')[0].replaceChildren(r1, r2);
+ }, false);
+//--><!]]></script>
+
+</body>
+</html>
