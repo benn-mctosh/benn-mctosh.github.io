@@ -308,3 +308,13 @@ a:hover {
     color: black;
 }
 
+@counter-style clips {
+  system: cyclic;
+  symbols: 🍷 🪸 🧬;
+  suffix: " ";
+}
+
+ul {
+  list-style: clips;
+}
+
