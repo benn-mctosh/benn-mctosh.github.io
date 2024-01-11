@@ -290,6 +290,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   .cv_year {
     max-width:180px;
   }
+  .card-item {
+    padding-left:40px !important;
+    padding-right:40px !important;
+  }
 }
 
 /* Links */
@@ -312,5 +316,14 @@ a:hover {
   system: cyclic;
   symbols: 🍷 🪸 🧬;
   suffix: " ";
+}
+
+.card-item { 
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+    padding-bottom:20px;
+    max-width:700px;
+    box-shadow:5px 5px #ccccaa
 }
 
