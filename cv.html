@@ -11,39 +11,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 </head>
-<body class=w3-khaki id=top>
+<body class="w3-khaki" id="top">
 
   <!-- top bar menu -->
   <div class="w3-row w3-light-blue w3-top">
-    <div class="w3-dropdown-click w3-hover-pale-blue">
-      <button onclick="toggle_mobileToC()" class="w3-button w3-light-blue w3-hover-pale-blue">
-        Contents &#9662;
+    <a href="index.html" class="w3-bar-item w3-button w3-hover-pale-blue">Bennett</a>
+    <div onclick="toggle_mobileToC()" class="w3-dropdown-click w3-hover-pale-blue">
+      <button class="w3-button w3-light-blue w3-hover-pale-blue">
+        CV &#9662;
       </button>
-      <div class="w3-dropdown-content w3-bar-block w3-border" id=mobileToC>
-        <a href=#contact class="w3-bar-item w3-button">Contact</a>
-        <a href=#education class="w3-bar-item w3-button">Education</a>
-        <a href=#research class="w3-bar-item w3-button">Research</a>
-        <a href=#experience class="w3-bar-item w3-button">Professional Experience</a>
-        <a href=#publications class="w3-bar-item w3-button">Publications</a>
-        <a href=#presentations class="w3-bar-item w3-button">Presentations</a>
-        <a href=#journalism class="w3-bar-item w3-button">Journalism</a>
-        <a href=#teaching class="w3-bar-item w3-button">Teaching Experience</a>
-        <a href=#development class="w3-bar-item w3-button">Professional Development</a>
-        <a href=#awards class="w3-bar-item w3-button">Awards</a>
-        <a href=#memberships class="w3-bar-item w3-button">Memberships</a>
+      <div class="w3-pale-blue w3-dropdown-content w3-bar-block" id=mobileToC>
+        <a href=#contact class="w3-hover-white w3-bar-item w3-button">Contact</a>
+        <a href=#education class="w3-hover-white w3-bar-item w3-button">Education</a>
+        <a href=#experience class="w3-hover-white w3-bar-item w3-button">Professional Experience</a>
+        <a href=#publications class="w3-hover-white w3-bar-item w3-button">Publications & Presentations</a>
+        <!-- <a hidden href=#presentations class="w3-hover-white w3-bar-item w3-button">Presentations</a> -->
+        <a href=#journalism class="w3-hover-white w3-bar-item w3-button">Journalism</a>
+        <a href=#teaching class="w3-hover-white w3-bar-item w3-button">Teaching Experience</a>
+        <a href=#development class="w3-hover-white w3-bar-item w3-button">Professional Development</a>
+        <a href=#awards class="w3-hover-white w3-bar-item w3-button">Awards & Memberships</a>
+        <!-- <a href=#memberships class="w3-bar-item w3-button">Memberships</a> -->
+        <a href="cvfiles/cv.pdf" style="border-top:solid black 3px" class="w3-bar-item w3-button w3-hover-white">Download/Print</a>
       </div>
     </div>
-    <a href="cvfiles/cv.pdf" class="w3-bar-item w3-button w3-hover-pale-blue">Download/Print</a>
-    <a href="index.html" class="w3-bar-item w3-button w3-hover-pale-blue">Home</a>
+    <a href="https://blog.bennettmcintosh.com" class="w3-bar-item w3-button w3-hover-pale-blue">Blog</a>    
   </div>
 
 
 <!-- content -->
 
-<div class="w3-row w3-khaki w3-container" style="padding-top:50px;padding-bottom:50px">
+<div class="w3-row w3-khaki w3-container" id="top" style="padding-top:50px;padding-bottom:50px">
 
   <!-- left margin -->
-  <div class="w3-col m1 l2 w3-container">&nbsp;
+  <div class="w3-col m1 l2 w3-container" style="min-width:100px">&nbsp;
   </div>
 
   <!-- CV -->
@@ -51,6 +51,7 @@
 <!-- end perl parser header -->
     <div class="w3-row w3-container cv_head" id="contact">
       <h3 style="padding-top:40px !important;">Curriculum Vitae</h3>
+      <a class="w3-button w3-hover-pale-blue" href="cvfiles/cv.pdf" style="font-size:small;position:absolute;top:40px;right:0px;">Download/<br>Print PDF</a>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
         <p></p>
@@ -64,6 +65,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="education">
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Education</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -106,6 +108,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="experience">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Other Professional Experience</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -172,6 +175,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="presentations">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Conference Presentations</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -190,6 +194,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="teaching">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Teaching Experience</h3>
     </div>    <div class="w3-row w3-container cv_head">      <h6>As Instructor of Record:</h6>    </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -228,6 +233,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="journalism">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Journalism & Public Writing</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -236,11 +242,12 @@
       <div class="w3-container w3-rest cv_entry">
         <p>You can read my published work in:</p>
         <ul style="list-style-type:'- '">
-<li> <a target="_blank" href="https://paw.princeton.edu/bio/bennett-mcintosh"><i>Princeton Alumni Weekly</i></a></li><li> <a target="_blank" href="https://www.harvardmagazine.com/profile/Bennett-McIntosh"><i>Harvard Magazine</i></a></li><li> <a target="_blank" href="https://www.pbs.org/wgbh/nova/author/bennett-mcintosh/"><i>NOVAnext</i></a></li><li> <a target="_blank" href="https://magazine.scienceforthepeople.org/vol22-2/the-science-journalism-we-need/"><i>Science for the People</i></a></li><li> <a target="_blank" href="https://www.whoi.edu/oceanus/author/bennett-mcintosh/"><i>Oceanus</i></a></li><li> <a target="_blank" href="https://bennettmcintosh.com/files/McIntosh-Tenderly-Animals-Covid.pdf"><i>Tenderly</i></a></li><li> <a target="_blank" href="https://mitpress.mit.edu/books/find-your-path/"><i>Find Your Path</i></a> (MIT Press, 2019; as researcher & contributing editor)</li>        </ul>        <p> Or,  <a target="_blank" href="https://bennettmcintosh.com/cvfiles/cv.pdf">download my CV as a PDF</a> to view full list</p>
+<li> <a target="_blank" href="https://paw.princeton.edu/bio/bennett-mcintosh"><i>Princeton Alumni Weekly</i></a></li><li> <a target="_blank" href="https://www.harvardmagazine.com/profile/Bennett-McIntosh"><i>Harvard Magazine</i></a></li><li> <a target="_blank" href="https://www.pbs.org/wgbh/nova/author/bennett-mcintosh/"><i>NOVAnext</i></a></li><li> <a target="_blank" href="https://magazine.scienceforthepeople.org/vol22-2/the-science-journalism-we-need/"><i>Science for the People</i></a></li><li> <a target="_blank" href="https://www.whoi.edu/oceanus/author/bennett-mcintosh/"><i>Oceanus</i></a></li><li> <a target="_blank" href="https://bennettmcintosh.com/files/McIntosh-Tenderly-Animals-Covid.pdf"><i>Tenderly</i></a></li><li> <a target="_blank" href="https://mitpress.mit.edu/books/find-your-path/"><i>Find Your Path</i></a> (MIT Press, 2019; as researcher & contributing editor)</li>        </ul>        <p> Or,  <a target="_blank" href="https://bennettmcintosh.com/cvfiles/cv.pdf">download as a PDF</a> to view full list</p>
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="development">
-      <h3>Professional Development & Non-degree Coursework</h3>
+       <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
+      <h3>Professional Development</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
         <p>2021</p>
@@ -287,6 +294,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="awards">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Awards & Honors</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -319,6 +327,7 @@
       </div>
     </div>
     <div class="w3-row w3-container cv_head" id="memberships">
+      <a href="#top" class="w3-hover-pale-blue" style="float:right;position:absolute;right:0px;top:15px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <h3>Memberships</h3>
     </div>    <div class="w3-row cv_row" display=none>
       <div class="w3-col m2 w3-container cv_year">
@@ -379,22 +388,7 @@
 </div>
 
 <script>
-function w3_open() {
-  document.getElementById("cvNavbar").style.display = "block";
-}
 
-function w3_close() {
-  document.getElementById("cvNavbar").style.display = "none";
-}
-
-function toggle_menu() {
-  if (document.getElementById("cvNavbar").style.display == "block") {
-    document.getElementById("cvNavbar").style.display = "none";
-  }
-  else {
-    document.getElementById("cvNavbar").style.display = "block";
-  }
-}
 
 function toggle_mobileToC() {
   var x = document.getElementById("mobileToC");
@@ -404,6 +398,10 @@ function toggle_mobileToC() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 70);
+});
 
 </script>
 

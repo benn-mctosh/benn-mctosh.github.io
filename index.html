@@ -14,12 +14,19 @@
 <body class="w3-khaki" style="line-height:1.6;">
 
   <!-- header -->
-  <div class="w3-row w3-bar w3-light-blue w3-top">
-    <a href="#contact" class="w3-bar-item w3-button w3-hover-pale-blue w3-hide-small">Contact</a>
-    <a href="#research" class="w3-bar-item w3-button w3-hover-pale-blue">Research</a>
-    <a href="#writing" class="w3-bar-item w3-button w3-hover-pale-blue">Writing</a>
-    <a href="#miscellany" class="w3-bar-item w3-button w3-hover-pale-blue"><span class="w3-hide-small">Games </span>&c</a>
-    <a href="cv" class="w3-bar-item w3-button w3-hover-pale-blue">CV</a>
+  <div class="w3-row w3-light-blue w3-top">
+    <div onclick="toggle_mobileToC()" class="w3-dropdown-click w3-hover-pale-blue">
+      <button class="w3-button w3-light-blue w3-hover-pale-blue">
+        Bennett &#9662;
+      </button>
+      <div class="w3-pale-blue w3-dropdown-content w3-bar-block" id=mobileToC>
+        <a href=#contact class="w3-hover-white w3-bar-item w3-button">Contact</a>
+        <a href=#research class="w3-hover-white w3-bar-item w3-button">Research</a>
+        <a href=#writing class="w3-hover-white w3-bar-item w3-button">Writing Experience</a>
+        <a href=#miscellany class="w3-hover-white w3-bar-item w3-button">Games &c</a>
+      </div>
+    </div>
+    <a href="cv.html" class="w3-bar-item w3-button w3-hover-pale-blue">CV</a>
     <a href="https://blog.bennettmcintosh.com" class="w3-bar-item w3-button w3-hover-pale-blue">Blog</a>
   </div>
 
@@ -28,8 +35,14 @@
   <!-- bio -->
   <div class="w3-row" style="padding-top:15px;">
     <div class="w3-col m4 w3-center w3-container">
-      <img class="w3-image" src="pics/front-sq-bw.jpg" height=300 width=300 style="max-width:100%;box-shadow:3px 3px #ccccaa" alt="Smiling Bennett">
+      <img class="w3-image" src="pics/front-sq-bw.jpg" height=300 width=300 style="max-width:100%;box-shadow:5px 5px #ccccaa" alt="Smiling Bennett">
       <p style="font-size:11px"><i>Photo by <a href="https://www.katiekarlbergphoto.com/about" target="_blank">Katie Karlberg</a></i></p>
+      <div class="w3-row w3-bar w3-white" style="padding-bottom:0px;margin-bottom:20px;box-shadow:5px 5px #ccccaa;">
+        <div class="w3-bar w3-white" style="margin-bottom:-6px!important;font-size:small;"><a href="#contact" class="w3-bar-item w3-button w3-hover-pale-blue">Contact</a>
+        <a href="#research" class="w3-bar-item w3-button w3-hover-pale-blue">Research</a></div>
+        <div class="w3-bar w3-white" style="margin-bottom:-6px!important;font-size:small;"><a href="#writing" class="w3-bar-item w3-button w3-hover-pale-blue">Writing</a>
+        <a href="#miscellany" class="w3-bar-item w3-button w3-hover-pale-blue">Games &c</a></div>
+      </div>
     </div>
     <div class="w3-container w3-col m7 w3-white card-item">
       <h2>Bennett McIntosh</h2>
@@ -55,7 +68,7 @@
     <div class="w3-col m4 w3-center w3-container">&nbsp;</div>
     <div class="w3-container w3-white w3-col m7 card-item" style="position:relative;">
       <h3>Contact</h3>
-      <a href="#top" class="w3-hover-light-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <table>
         <tr>
           <td class=icon><a target="_blank"href="mailto:bamcintosh@wisc.edu"><img src="pics/icons/email_clear.png" alt="Email:" width=30 height=30></a></td>
@@ -83,7 +96,7 @@
     <div class="w3-col m4 w3-center w3-container">&nbsp;</div>
     <div class="w3-container w3-col m7 w3-white card-item" style="position:relative;">
       <h3>Research</h3>
-      <a href="#top" class="w3-hover-light-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>
       <p>I work at the intersection of History and Science and Technology Studies (STS), examining how scientists, the questions they ask, the technology they use, and the world in which they live in all shape each other.</p>
       <p>Specifically, I am interested in scientists&#8217; <b>data practices</b>—how they make their data useable, portable, and intelligible—and what these practices mean <i>about</i> and <i>for</i> the context in which this science happens.</p>
       <p>I wrote my M.A. thesis on some cases where <b><i>removing</i> detail from genomic data sets made the data more useful and portable</b> (by protecting interests like consumer privacy and intellectual property). I focused on social scientists using genomic data, though many of the practices I examined are broadly relevant in genomics. For my dissertation, I am extending this research, both adding historical context for these practicies and examining the scientific and ethical values embedded in these data practices.</p>
@@ -100,7 +113,7 @@
     <div class="w3-col m4 w3-center w3-container">&nbsp;</div>
     <div class="w3-container w3-col m7 w3-white card-item" style="position:relative;">
       <h3>Writing</h3>
-      <a href="#top" class="w3-hover-light-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
       <p>I worked for several years as a full-time journalist and science writer, covering genetics, neuroscience, technology, and assorted other topics. Nowdays, most of my writing is academic, though I occasionally <a target="_blank" href="https://blog.bennettmcintosh.com">blog about what I'm reading</a>, and still take the rare writing or editing gig.</p>
       <p>Some of my favorites:</p>
       
@@ -124,7 +137,7 @@
     <div class="w3-col m4 w3-center w3-container">&nbsp;</div>
     <div class="w3-container w3-col m7 w3-white card-item" style="position:relative;">
       <h3>On games</h3>
-      <a href="#top" class="w3-hover-light-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
               <p><b>Let&#8217;s play, grandma!</b> <a href="words.html">Here&#8217;s</a> a game I made for my grandma.</p>
               <p><b>Let&#8217;s eat[,] god!</b> <a href="eat-god/sheet.html">Here&#8217;s</a> a game I didn&#8217;t make, but that I enjoy and you might too.</p>
               <p><b>Putting the Tank in ‘Think Tank’?</b> I&#8217;ve had a bee in my bonnet for a while about the tank battle game depicted below, developed by physicist George Gamow in the early 1950s [<a href="https://grognard.com/download/games/board/tankgame.pdf" target="_blank">rules</a>; <a href="https://www.jstor.org/stable/166721" target="_blank">original report by Thornton Page</a>]. </p>
@@ -147,7 +160,7 @@
     <div class="w3-col m4 w3-center w3-container">&nbsp;</div>
     <div class="w3-container w3-col m7 w3-white card-item" style="position:relative;">
       <h3><i>Et cetera...</i></h3>
-      <a href="#top" class="w3-hover-light-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
+      <a href="#top" class="w3-hover-pale-blue" style="position:absolute;right:30px;top:30px"><img src="pics/icons/top.png" style="height:25px;width:25px;border-radius:3px;" alt="Back to top" title="Back to top"></a>      
       <p>You shoud check out <a target="_blank" href="https://www.marinabolotnikova.com/writing">Marina Bolotnikova's journalism</a>. In my (not entirely unbiased) opinion, it's some of the best, most important writing out there.
 
       <h4>Occasionally asked questions</h4>
@@ -199,22 +212,26 @@
   </div>
 
 
-<script type="text/javascript"><!--//--><![CDATA[//><!--
- document.addEventListener("DOMContentLoaded", function () {
-        /* do not run if browser lacks the antifeature */
-        if (navigator.getEnvironmentIntegrity === undefined)
-                return;
-        /* disable all CSS */
-        for (let elt of document.getElementsByTagName("link"))
-                elt.disabled = true;
-        /* replace body content */
-        var r1 = document.createElement("h1");
-        r1.appendChild(document.createTextNode("Your browser contains Google DRM!"));
-        var r2 = document.createElement("p");
-        r2.innerHTML = '“Web Environment Integrity” is a Google euphemism for DRM (digital restrictions management) that is designed to prevent ad-blocking and allow only browsers authorized by Google (as opposed to e.g. browsers on hobbyist or aftermarket operating systems). This will likely hurt both privacy (if Google and a few other big players get to decide which ads and trackers are “integral” to the “web environment”) and competition (if smaller browsers that do not implement this protocol are blocked from viewing many websites). <br><br>In support of an open web, this website does not function with browsers that utilize this kind of DRM. Please install a webbrowser such as <a href="https://invisible-island.net/lynx/lynx.html"><tt>lynx</tt></a> or <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> that better respects everyone’s freedom and supports ad blockers.<br><br>You can <a href="https://vivaldi.com/blog/googles-new-dangerous-web-environment-integrity-spec/">read more about this here</a>.<br><br>If you see this message, I would be grateful if you emailed <u>bennettmcintosh ат duck dот com</u>, to help me keep track of how common this sort of DRM has become.';
-        document.getElementsByTagName('body')[0].replaceChildren(r1, r2);
- }, false);
-//--><!]]></script>
+<script>
+
+
+function toggle_mobileToC() {
+  console.log("togMTC")
+  var x = document.getElementById("mobileToC");
+  if (x.className.indexOf("w3-show") == -1) {
+    console.log("ON")
+    x.className += " w3-show";
+  } else {
+    console.log("OFF")
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 70);
+});
+
+</script>
 
 </body>
 </html>
