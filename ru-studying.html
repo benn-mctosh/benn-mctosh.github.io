@@ -1,7 +1,7 @@
 <!-- 
 
 /* 
-- fix за, occurance (?), ребята, чай
+- fix за, occurance (?), ребята, чай, прямо
 - ask for conjugation/declension
 - add add'l chapters
 */
@@ -62,7 +62,7 @@
         
     <div class="w3-col l10 w3-white w3-container w3-center" style="margin-top:15px;max-width:600px;box-shadow:5px 5px #ccccaa;" id="container">
       <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:400px;border-radius:4px">
-        <h4 style="margin:auto;">Как сказать «<b><span id="en">Banana</span></b>»?</h4>
+        <h4 style="margin:auto;">Как сказать «<b><span id="en">Banana</span></b>»? (<span id="type"></span>)</h4>
         <hr style="margin-top:0px;color:black;border:1px solid black!important">
         <h3 hidden id="ru"></h3>
         <p hidden id="info"></p>
@@ -76,12 +76,13 @@
         <div class="w3-col s6 m6 l6" style="padding:10px;"><button class="w3-button w3-light-blue w3-hover-pale-blue" href="#" style="width:100%" onclick="redoCard()">Try again <span class="w3-hide-small">later [1]</span></a></div>
         <div class="w3-col s6 m6 l6" style="padding:10px;"><button class="w3-button w3-column s6 w3-green w3-hover-light-green" href="#" style="width:100%" onclick="doneCard()">Done <span class="w3-hide-small">with card [2]</span></a></div>
       </div>   
-      <div class="w3-row w3-center" style="width:100%;text-align:left!important;">
+      <div id="about" class="w3-row w3-center" style="width:100%;text-align:left!important;">
         <p>Data from <a href="https://en.openrussian.org/" target="_blank">openrussian.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en">CC BY-SA</a> which license covers this too. I've done some cleaning, but if you notice a problem, <a href="mailto:bamcintosh@wisc.edu">let me know</a>!
         <p>Coming soon:</p>
         <ul>
           <li>More chapters!</li>
           <li>Conjugation/declension practice!</li>
+          <li>Better handling of perf/imperf pairs!</li>
         </ul>
       </div>
   </div>    
@@ -111,7 +112,12 @@
        i = cardList.pop();
        card = g109[i];
        document.getElementById("en").innerHTML = formatEn(card["en"]);
-       
+       document.getElementById("type").innerHTML = formatType(card["type"]);    
+    }
+    
+    function formatType(s) {
+      if (s.length == 4) {return s;}
+      return (s.slice(0,3) + ".");
     }
     
     function redoCard() {
@@ -311,6 +317,8 @@ const cardList = shuffle(g109.length)
 var i = cardList.pop()
 var card = g109[i];
 document.getElementById("en").innerHTML = formatEn(card["en"]);
+document.getElementById("type").innerHTML = formatType(card["type"]);    
+
 
 </script>
 
