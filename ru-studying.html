@@ -1,7 +1,7 @@
 <!-- 
 
 /* 
-- fix за, occurance (?), ребята, чай, прямо
+- fix occurance (?), ребята, чай, прямо, целый, случай
 - ask for conjugation/declension
 - add add'l chapters
 */
@@ -235,7 +235,14 @@
     }
     
     function showAdj() {
-      let root = card["ru_adj_m_nom"].slice(0, -2);
+      if (card["ru_adj_m_nom"].slice(-2).includes("'")) {
+        var trunc = -3;
+        console.log("truncating accent")
+      }
+      else {
+        var trunc = -2;
+      }
+      let root = card["ru_adj_m_nom"].slice(0, trunc);
       let decls = ["Nom", "Gen", "Acc", "Dat", "Inst", "Prep"];
       let heds = ["", "M", "F", "N", "Pl"];
       let t = document.getElementById("forms");
