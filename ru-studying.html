@@ -1,0 +1,320 @@
+<!-- 
+
+/* 
+- fix за, occurance (?), ребята, чай
+- ask for conjugation/declension
+- add add'l chapters
+*/
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" sizes="192x192" href="pics/favicosahedron.png">
+  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="stylesheet" href="styles/W3.css">
+  <title>RU Studying?</title>
+  <meta property="og:title" content="RU Studying?"/>
+  <meta property="og:description" content="Slavic 102 UW Madison"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <style>
+    button {
+      box-shadow:3px 3px #aaaaaa;
+      border: none!important;
+      padding:4px 2px;
+      font-size:large;
+      border-radius:0px!important;
+    }
+    table {
+       border-collapse: collapse;
+    }
+    td {
+      padding: 2px 10px!important;
+    }
+    tr:nth-child(even) {
+      background-color: rgb(220, 220, 220);
+    }
+    
+  </style>
+</head>
+<body onkeypress="if(event.keyCode===13) submitAnswer(); if(event.keyCode==49) redoCard(); if(event.keyCode==50) doneCard();" class="w3-khaki">
+
+  <!-- header -->
+  <div class="w3-row w3-light-blue w3-top">
+    <div onclick="toggle_mobileToC()" style="float:left" class="w3-dropdown-click w3-hover-pale-blue">
+      <button class="w3-button w3-light-blue w3-hover-pale-blue" style="box-shadow:none!important;">
+        Menu &#9662;
+      </button>
+      <div class="w3-pale-blue w3-dropdown-content w3-bar-block" id=mobileToC>
+        <p style="text-align:center;">Nothing here yet, sorry!</p>
+      </div>
+    </div>
+    <div style="font-size:small;text-align:center;padding-left:20px"><i>Now studying chapter 9<br>(more chapters coming soon!)</i></div>
+  </div>
+
+
+  <div class="w3-row" style="padding-top:50px;height:">
+    <div class="w3-container w3-col l1 m1 w3-hide-small">&nbsp;</div>
+        
+    <div class="w3-col l10 w3-white w3-container w3-center" style="margin-top:15px;max-width:600px;box-shadow:5px 5px #ccccaa;" id="container">
+      <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:400px;border-radius:4px">
+        <h4 style="margin:auto;">Как сказать «<b><span id="en">Banana</span></b>»?</h4>
+        <hr style="margin-top:0px;color:black;border:1px solid black!important">
+        <h3 hidden id="ru"></h3>
+        <p hidden id="info"></p>
+        <table hidden style="margin:auto;" id="forms"></table>
+      </div>
+      <div id="inputBox" class="w3-row w3-center" style="padding:10px;width:100%">
+        <input style="width:70%;font-size:large;border:2px solid black;border-radius:4px" type="text" id="response" autofocus="autofocus">
+        <button onclick="submitAnswer()" style="width:25%;padding:4px 8px;font-size:large;border-radius:4px;" class="w3-column s6 w3-light-blue w3-hover-pale-blue"><span class="w3-hide-small">Submit </span>⇧</button>
+      </div>
+      <div hidden id="buttons" class="w3-row w3-center" style="width:100%">
+        <div class="w3-col s6 m6 l6" style="padding:10px;"><button class="w3-button w3-light-blue w3-hover-pale-blue" href="#" style="width:100%" onclick="redoCard()">Try again <span class="w3-hide-small">later [1]</span></a></div>
+        <div class="w3-col s6 m6 l6" style="padding:10px;"><button class="w3-button w3-column s6 w3-green w3-hover-light-green" href="#" style="width:100%" onclick="doneCard()">Done <span class="w3-hide-small">with card [2]</span></a></div>
+      </div>   
+      <div class="w3-row w3-center" style="width:100%;text-align:left!important;">
+        <p>Data from <a href="https://en.openrussian.org/" target="_blank">openrussian.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en">CC BY-SA</a> which license covers this too. I've done some cleaning, but if you notice a problem, <a href="mailto:bamcintosh@wisc.edu">let me know</a>!
+        <p>Coming soon:</p>
+        <ul>
+          <li>More chapters!</li>
+          <li>Conjugation/declension practice!</li>
+        </ul>
+      </div>
+  </div>    
+</div>
+
+
+
+<script type="text/javascript" src="g109.js"></script>
+
+<script>
+    
+    
+    function formatEn(s) {
+      return s.replaceAll("|", "; ");
+    }
+    
+    function resetCard() {
+       document.getElementById("ru").setAttribute("hidden", "false");
+       document.getElementById("buttons").setAttribute("hidden", "false");
+       document.getElementById("response").value = "";
+       document.getElementById("response").style.backgroundColor = "white";
+       document.getElementById("response").style.border = "2px solid black";
+       document.getElementById("forms").innerHTML = "";
+       document.getElementById("forms").setAttribute("hidden", "false");
+       document.getElementById("info").setAttribute("hidden", "false");
+       // document.getElementById("inputBox").removeAttribute("hidden");
+       i = cardList.pop();
+       card = g109[i];
+       document.getElementById("en").innerHTML = formatEn(card["en"]);
+       
+    }
+    
+    function redoCard() {
+      if (document.getElementById("buttons").hasAttribute("hidden")) {return;}
+      cardList.push(i);
+      resetCard();
+      // console.log("Redo Card");
+    }
+
+    function doneCard() {
+      if (document.getElementById("buttons").hasAttribute("hidden")) {return;}
+      resetCard();
+      // console.log("Done with Card");
+    }
+    
+    function formatRu(s, root = "", hed = "") {
+      if (root.length > 0 && hed != "m") {
+        s = s.replaceAll(root, "-")
+      }
+      return s.replaceAll("'", "\u0301");
+    }
+    
+    function showDecls(t, heds, decls, prefix, root = "") {
+          var tr = t.insertRow();
+          for (let c = 0; c < heds.length; c++) {
+            var td = tr.insertCell();
+            td.style.fontWeight = "bold"
+            td.appendChild(document.createTextNode(heds[c] + "."))
+          }
+          for (let r = 0; r < decls.length; r++) {
+            tr = t.insertRow();
+            const td = tr.insertCell();
+            td.style.fontWeight = "bold"
+            td.appendChild(document.createTextNode(decls[r] + "."))
+            for (let c = 1; c < heds.length; c++) {
+              const td = tr.insertCell();
+              form = [prefix, heds[c].toLowerCase(), decls[r].toLowerCase()].join("_");
+              console.log(form)
+              let ru = formatRu(card[form], root, heds[c]);
+              td.appendChild(document.createTextNode(ru));
+            }
+          }
+    }
+    
+    function showNoun() {
+      let decls = ["Nom", "Gen", "Acc", "Dat", "Inst", "Prep"];
+      let heds = ["", "Sg", "Pl"];
+      let t = document.getElementById("forms");
+      t.removeAttribute("hidden");
+      const genders = {"m":"Masc.", "n":"Neut.", "f":"Fem.", "-":"Gender error!"}
+      let info = genders[card["gender"]]
+      if (card["animate"] == 1) {
+        info = info + ", Animate";
+      }
+      if (card["sg_only"] == 1) {
+        heds = ["", "Sg"];
+        info = info + ", Singular only";
+      }
+      else if (card["pl_only"] == 1) {
+        heds = ["", "Pl"];
+        info = info + ", Plural only";
+      }
+
+      if (card["indeclinable"] == 1) {
+        info = info + ", Indeclinable";
+        t.setAttribute("hidden", "false");
+      }
+      else {
+        showDecls(t, heds, decls, "ru_noun")
+      }
+      document.getElementById("info").removeAttribute("hidden");
+      document.getElementById("info").innerHTML = info;
+    }
+    
+    function showVerb() {
+      let tenses = ["1st", "2nd", "3rd"];
+      let heds = ["", "Sg", "Pl"];
+      let prefix = "ru_verb_presfut_"
+      let t = document.getElementById("forms")
+      t.removeAttribute("hidden");
+
+      
+      var tr = t.insertRow();
+      for (let c = 0; c < heds.length; c++) {
+        var td = tr.insertCell();
+        td.style.fontWeight = "bold";
+        td.appendChild(document.createTextNode(heds[c] + "."))
+      }
+      for (let r = 0; r < tenses.length; r++) {
+        tr = t.insertRow();
+        const td = tr.insertCell();
+        td.style.fontWeight = "bold";
+        td.appendChild(document.createTextNode(tenses[r]));
+        for (let c = 1; c < heds.length; c++) {
+          const td = tr.insertCell();
+          form = [prefix, heds[c].toLowerCase(), tenses[r].slice(0,1)].join("");
+          console.log(form)
+          let ru = formatRu(card[form]);
+          td.appendChild(document.createTextNode(ru));
+        }
+      }
+      tr = t.insertRow();
+      td = tr.insertCell();
+      td.style.fontWeight = "bold";
+      td.appendChild(document.createTextNode("Past {"));
+      td = tr.insertCell();
+      td.setAttribute("colspan", 2);
+      let ptforms = [formatRu(card["ru_verb_past_m"]), 
+                      formatRu(card["ru_verb_past_f"])].join(" / ");
+      td.appendChild(document.createTextNode(ptforms));
+      td.appendChild(document.createElement("BR"))
+      ptforms = [formatRu(card["ru_verb_past_n"]), 
+                      formatRu(card["ru_verb_past_pl"])].join(" / ");      
+      td.appendChild(document.createTextNode(ptforms));
+    }
+    
+    function showAdj() {
+      let root = card["ru_adj_m_nom"].slice(0, -2);
+      let decls = ["Nom", "Gen", "Acc", "Dat", "Inst", "Prep"];
+      let heds = ["", "M", "F", "N", "Pl"];
+      let t = document.getElementById("forms");
+      t.removeAttribute("hidden");
+      
+      showDecls(t, heds, decls, "ru_adj", root)
+      // add short forms!
+    
+    }
+    
+    function showOther() {
+    
+    }
+    
+    function showRu() {
+      document.getElementById("forms").innerHTML = "";
+      if (card["type"] == "noun") {showNoun();}
+      else if (card["type"] == "verb") {showVerb();}
+      else  if (card["type"] == "adjective") {showAdj();}
+      else {showOther();}
+    }
+
+    function submitAnswer() {
+      showRu();
+      let response = document.getElementById("response").value.toLowerCase();
+      let answer = card["bare"].toLowerCase();
+      document.getElementById("ru").removeAttribute("hidden");
+      document.getElementById("ru").innerHTML = card["bare"];
+      document.getElementById("buttons").removeAttribute("hidden")
+      // document.getElementById("inputBox").setAttribute("hidden","false")
+      console.log(response == answer)
+      if (response == "") {
+        
+      }
+      else if (answer == response) {
+        document.getElementById("response").style.border = "2px solid green";
+        document.getElementById("response").style.backgroundColor = "rgb(200, 255, 200)";
+      }
+      else {
+        document.getElementById("response").style.border = "2px solid red";
+        document.getElementById("response").style.backgroundColor = "rgb(255, 200, 200)"
+      }
+    }
+
+function toggle_mobileToC() {
+  var x = document.getElementById("mobileToC");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function shuffle(n) {
+  const result = Array.from({ length: n }, (_, index) => index);
+
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+
+  return result;
+}
+
+// response box ignores '1' and '2' keypresses b/c those trigger buttons
+document.getElementById('response').addEventListener('keydown', function(event) {
+      // Specify the key codes you want to ignore
+      const ignoredKeyCodes = [49, 50]; 
+
+      // Check if the pressed key code is in the ignored list
+      if (ignoredKeyCodes.includes(event.keyCode)) {
+        event.preventDefault();
+        if(event.keyCode==49) redoCard(); 
+        if(event.keyCode==50) doneCard();
+      }
+    });
+
+const cardList = shuffle(g109.length)
+var i = cardList.pop()
+var card = g109[i];
+document.getElementById("en").innerHTML = formatEn(card["en"]);
+
+</script>
+
+</body>
+</html>
+
+
