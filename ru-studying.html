@@ -61,12 +61,13 @@
     <div class="w3-container w3-col l1 m1 w3-hide-small">&nbsp;</div>
         
     <div class="w3-col l10 w3-white w3-container w3-center" style="margin-top:15px;max-width:600px;box-shadow:5px 5px #ccccaa;" id="container">
-      <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:400px;border-radius:4px">
+      <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:400px;border-radius:4px;position:relative;">
         <h4 style="margin:auto;">Как сказать «<b><span id="en">Banana</span></b>»? (<span id="type"></span>)</h4>
         <hr style="margin-top:0px;color:black;border:1px solid black!important">
         <h3 hidden id="ru"></h3>
         <p hidden id="info"></p>
         <table hidden style="margin:auto;" id="forms"></table>
+        <div style="position:absolute;bottom:0px;right:3px;color:gray;font-size:small">Cards left: <span id="remaining">000</span> (of <span id="total">000</span>)</div>
       </div>
       <div id="inputBox" class="w3-row w3-center" style="padding:10px;width:100%">
         <input style="width:70%;font-size:large;border:2px solid black;border-radius:4px" type="text" id="response" autofocus="autofocus">
@@ -80,10 +81,12 @@
         <p>Data from <a href="https://en.openrussian.org/" target="_blank">openrussian.org</a> under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en">CC BY-SA</a> which license covers this too. I've done some cleaning, but if you notice a problem, <a href="mailto:bamcintosh@wisc.edu">let me know</a>!
         <p>Coming soon:</p>
         <ul>
-          <li>More chapters!</li>
+          <li>More chapters (inclding from 101)!</li>
           <li>Conjugation/declension practice!</li>
           <li>Better handling of perf/imperf pairs!</li>
+          <li>Data download (e.g. for import into <a href="https://apps.ankiweb.net/" target="_blank">Anki</a>) so you can save your progress!</li>
         </ul>
+        <p><i>(If you have opinions about how I should prioritize these, or want to suggest another feature, <a href="https://docs.google.com/forms/d/e/1FAIpQLSd3hb88cqcRfPJc0TZbKZH6WIZmX-AO43z-a-qRsOaOuejWDA/viewform?usp=sf_link" target="_blank">vote here</a>.)</i></p>
       </div>
   </div>    
 </div>
@@ -121,13 +124,16 @@
     }
     
     function redoCard() {
+      let b = Math.max(0, cardList.length - buryDist)
       if (document.getElementById("buttons").hasAttribute("hidden")) {return;}
-      cardList.push(i);
+      cardList.splice(b, 0, i);
       resetCard();
       // console.log("Redo Card");
     }
 
     function doneCard() {
+      cardsLeft = cardsLeft - 1;
+      document.getElementById("remaining").innerHTML = cardsLeft;
       if (document.getElementById("buttons").hasAttribute("hidden")) {return;}
       resetCard();
       // console.log("Done with Card");
@@ -270,7 +276,7 @@
       let response = document.getElementById("response").value.toLowerCase();
       let answer = card["bare"].toLowerCase();
       document.getElementById("ru").removeAttribute("hidden");
-      document.getElementById("ru").innerHTML = card["bare"];
+      document.getElementById("ru").innerHTML = formatRu(card["accented"]);
       document.getElementById("buttons").removeAttribute("hidden")
       // document.getElementById("inputBox").setAttribute("hidden","false")
       console.log(response == answer)
@@ -319,8 +325,12 @@ document.getElementById('response').addEventListener('keydown', function(event) 
         if(event.keyCode==50) doneCard();
       }
     });
-
-const cardList = shuffle(g109.length)
+    
+var buryDist = 10; 
+var cardsLeft = g109.length;
+const cardList = shuffle(cardsLeft);
+document.getElementById("remaining").innerHTML = cardsLeft;
+document.getElementById("total").innerHTML = cardsLeft;
 var i = cardList.pop()
 var card = g109[i];
 document.getElementById("en").innerHTML = formatEn(card["en"]);
