@@ -61,17 +61,16 @@
     <div class="w3-container w3-col l1 m1 w3-hide-small">&nbsp;</div>
         
     <div class="w3-col l10 w3-white w3-container w3-center" style="margin-top:15px;max-width:600px;box-shadow:5px 5px #ccccaa;" id="container">
-      <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:400px;border-radius:4px;position:relative;">
+      <div id="flashcard" class="w3-row w3-center" style="text-align:center;border:2px solid black;padding:10px;margin:20px 10px;height:500px;border-radius:4px;position:relative;">
         <h4 id="question" style="margin:auto;">Как сказать «<b><span id="en">Banana</span></b>»? (<span id="type"></span>)</h4>
-        <hr style="margin-top:0px;color:black;border:1px solid black!important">
+        <div id="inputBox" class="w3-row w3-center" style="padding:10px;width:100%">
+          <input style="width:70%;font-size:large;border:2px solid black;border-radius:4px" type="text" id="response" autofocus="autofocus">
+          <button onclick="submitAnswer()" style="width:25%;padding:4px 8px;font-size:large;border-radius:4px;" class="w3-column s6 w3-light-blue w3-hover-pale-blue"><span class="w3-hide-small">Submit </span>⇧</button>
+        </div>
         <h3 hidden id="ru"></h3>
         <p hidden id="info"></p>
         <table hidden style="margin:auto;" id="forms"></table>
         <div style="position:absolute;bottom:0px;right:3px;color:gray;font-size:small">Cards left: <span id="remaining">000</span> (of <span id="total">000</span>)</div>
-      </div>
-      <div id="inputBox" class="w3-row w3-center" style="padding:10px;width:100%">
-        <input style="width:70%;font-size:large;border:2px solid black;border-radius:4px" type="text" id="response" autofocus="autofocus">
-        <button onclick="submitAnswer()" style="width:25%;padding:4px 8px;font-size:large;border-radius:4px;" class="w3-column s6 w3-light-blue w3-hover-pale-blue"><span class="w3-hide-small">Submit </span>⇧</button>
       </div>
       <div hidden id="buttons" class="w3-row w3-center" style="width:100%">
         <div class="w3-col s6 m6 l6" style="padding:10px;"><button class="w3-button w3-light-blue w3-hover-pale-blue" href="#" style="width:100%" onclick="redoCard()">Try again <span class="w3-hide-small">later [1]</span></a></div>
@@ -106,8 +105,8 @@
        document.getElementById("ru").setAttribute("hidden", "false");
        document.getElementById("buttons").setAttribute("hidden", "false");
        document.getElementById("response").value = "";
-       document.getElementById("response").style.backgroundColor = "white";
-       document.getElementById("response").style.border = "2px solid black";
+       document.getElementById("flashcard").style.backgroundColor = "white";
+       document.getElementById("flashcard").style.border = "2px solid black";
        document.getElementById("forms").innerHTML = "";
        document.getElementById("forms").setAttribute("hidden", "false");
        document.getElementById("info").setAttribute("hidden", "false");
@@ -134,7 +133,7 @@
     function doneCard() {
       cardsLeft = cardsLeft - 1;
       document.getElementById("remaining").innerHTML = cardsLeft;
-      if (cardsLeft == 0) {
+      if (cardsLeft < 1) {
         document.getElementById("question").innerHTML = "Congrats, you're done!";
         document.getElementById("ru").innerHTML = "You've done all the cards";
         document.getElementById("info").innerHTML = "Hit refresh to start over, or just, y'know, go live your life!";
@@ -292,12 +291,12 @@
         
       }
       else if (answer == response) {
-        document.getElementById("response").style.border = "2px solid green";
-        document.getElementById("response").style.backgroundColor = "rgb(200, 255, 200)";
+        document.getElementById("flashcard").style.border = "2px solid green";
+        document.getElementById("flashcard").style.backgroundColor = "rgb(200, 255, 200)";
       }
       else {
-        document.getElementById("response").style.border = "2px solid red";
-        document.getElementById("response").style.backgroundColor = "rgb(255, 200, 200)"
+        document.getElementById("flashcard").style.border = "2px solid red";
+        document.getElementById("flashcard").style.backgroundColor = "rgb(255, 200, 200)"
       }
     }
 
