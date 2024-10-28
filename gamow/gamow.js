@@ -588,10 +588,24 @@ function moveTanks() {
 }
 
 function gamShuffle(array) {
-   return array.sort( ()=> (Math.random()-0.5) );
-} // from https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/#
-  // chose this method because it's short and chaoitc neutral
-  // TODO: a shuffle that actually works lmao
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Create a random index to pick from the original array
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // Cache the value, and swap it with the current element
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+} // from https://pitayan.com/posts/javascript-shuffle-array/
+
 
 
 function sleep(ms) {
