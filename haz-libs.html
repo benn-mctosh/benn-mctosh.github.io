@@ -20,7 +20,7 @@
 
   <!-- bio -->
   <div style="padding-top:0px;">
-    <div style="display:block;margin-left:auto;margin-right:auto;width:90%;max-width:700px" class="w3-white card-item">
+    <div id="news" style="display:block;margin-left:auto;margin-right:auto;width:90%;max-width:700px" class="w3-white card-item">
       <h4 style="font-size:small;color:gray">An <i>Ulrich Beacon</i> Breaking News Update</h4>
       <h2 style="font-family:georgia,serif;"><span id="interjection">Uh-oh!</span> Now scientists say <span id="contaminant">flame retardants</span> in your <span id="product">black plastic kitchen utensils</span> can cause <span id="hazard">cancer</span>?</h2>
       <h4>Apparently it’s all to do with <span id="modernity">e-waste recycling</span>, like that somehow explains it</h3>
@@ -31,10 +31,8 @@
   </div>
 <a style="max-width:500px;width:80%;display:block;margin-top:20px;margin-left:auto;margin-right:auto;box-shadow:5px 5px tan" href="#" onclick="window.location.reload();" class="w3-button w3-light-green w3-hover-green">♻️ Manufacture another risk ♻️</a>
 <p style="margin-bottom:-10px;text-align:center">Or roll the dice one at a time:</p>
-<p style="padding-top:0px;text-align:center"><a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('interjection')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('contaminant')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('product')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('hazard')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('modernity')">🎲</a> 
-       </p>
-       <p style="font-size:small;text-align:center">Inspired by <a href="https://www.cnn.com/2024/10/01/health/flame-retardant-black-plastic-wellness/index.html" target="_blank">flame retardants / black plastic / e-waste</a></p>
-
+<p style="padding-top:0px;text-align:center"><a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('interjection')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('contaminant')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('product')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('hazard')">🎲</a>&nbsp;<a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('modernity')">🎲</a></p>
+<p style="font-size:small;text-align:center">Inspired by <a href="https://www.cnn.com/2024/10/01/health/flame-retardant-black-plastic-wellness/index.html" target="_blank">flame retardants / black plastic / e-waste</a>. Now with <span id="Nrisk">>1,000,000</span> possible risks!</p>
 
 
 </div>
@@ -47,12 +45,15 @@
 // should be sentence case
 const lookup = 
     {"interjection" : ["Uh-oh!", "Whoops!", "WTF!?", "Bad news!", "Look out!", "Oh no!", "Not again!", "Dagnabbit!"],
-     "contaminant" : ["fomites", "mold spores", "radiation", "demons", "radionuclides", "heavy water", "fluoride", "flame retardants", "non-stick compounds", "plasticizers", "emulsifiers", "prions", "dyes", "microplastics", "endocrine disruptors", "asbestos", "ozone", "CFCs", "pesticides", "herbicides", "nitrates", "nitrites", "sulfates", "pink slime", "bird flu", "phenols", "PCBs", "salmonella", "heavy metals", "cadmium", "lead", "poisoned data", "opioids", "nanoparticles", "molten boron", "vacuum decay", "VOCs", "critical minerals", "fire-fighting foams"],
+     "contaminant" : ["fomites", "mold spores", "radiation", "demons", "radionuclides", "heavy water", "fluoride", "flame retardants", "non-stick compounds", "plasticizers", "emulsifiers", "prions", "dyes", "microplastics", "endocrine disruptors", "asbestos", "ozone", "CFCs", "pesticides", "herbicides", "nitrates", "nitrites", "sulfates", "pink slime", "bird flu", "phenols", "PCBs", "salmonella", "heavy metals", "cadmium", "lead", "poisoned data", "opioids", "nanoparticles", "molten boron", "vacuum decay", "VOCs", "critical minerals", "fire-fighting foams", "benzene", "sodium",],
      "hazard" : ["cancer", "vCJD", "birth defects", "behavioral issues", "anxiety", "measles", "fatigue", "high blood pressure", "Alzheimer’s", "vision loss", "diabetes", "goiter", "hyperthyroidism", "hypothyroidism", "osteoporosis", "rickets", "benign tumors", "delayed puberty", "precocious puberty", "PCOS", "stroke", "obesity", "COPD", "food poisoning", "kidney disease", "liver disease", "appendicitis", "asthma", "chronic fatigue", "brain fog", "general malaise", "flatulence", "mild confusion", "learning disorders", "your pet to get sick"],
-     "modernity" : ["e-waste recycling", "plastic recycling", "prison labor", "Chevron deference", "topsoil erosion", "deforestation", "artificial fertilizers", "eutrophication", "climate change", "AMOC weakening", "private equity", "containerization", "dairy consolidation", "factory farming", "slurry spraying", "algorithms", "neoliberalism", "vertical integration", "filter bubbles", "mass surveillance", "zoonosis"],
-     "product" :["carpet", "paint", "black plastic kitchen utensils", "baby food", "mattress", "cell phone", "birth control pills", "vinyl floors", "drywall", "car", "upholstery", "synthetic clothes", "leather accessories", "fast fashion cotton", "wool sweater", "pillow stuffing", "insulation", "bottled water", "municipal water", "umbrella", "ebook reader", "LLM chatbot", "kitchen tiles", "lithium batteries", "coffee filters", "tea bags", "antique china", "wood varnish", "citrus", "strawberries", "raspberries", "bean sprouts", "romaine lettuce", "shoelaces", "catalytic converter", "printer cartridges", "tires", "natural gas", "coffee", "chocolate", "turmeric", "contact lens solution", "air fryer", "toaster oven", "blender", "parchment paper"]
+     "modernity" : ["e-waste recycling", "plastic recycling", "prison labor", "Chevron deference", "topsoil erosion", "deforestation", "artificial fertilizers", "eutrophication", "climate change", "AMOC weakening", "private equity", "containerization", "dairy consolidation", "factory farming", "slurry spraying", "algorithms", "neoliberalism", "vertical integration", "filter bubbles", "mass surveillance", "zoonosis", "gig work"],
+     "product" : ["carpet", "paint", "black plastic kitchen utensils", "baby food", "mattress", "cell phone", "birth control pills", "vinyl floors", "drywall", "car", "upholstery", "synthetic clothes", "leather accessories", "fast fashion cotton", "wool sweater", "pillow stuffing", "insulation", "bottled water", "municipal water", "umbrella", "ebook reader", "LLM chatbot", "kitchen tiles", "lithium batteries", "coffee filters", "tea bags", "antique china", "wood varnish", "citrus", "strawberries", "raspberries", "bean sprouts", "romaine lettuce", "shoelaces", "catalytic converter", "printer cartridges", "tires", "natural gas", "coffee", "chocolate", "turmeric", "contact lens solution", "air fryer", "toaster oven", "blender", "parchment paper"]
      }
 
+Nrisk = lookup["modernity"].length * lookup["contaminant"].length * lookup["hazard"].length * lookup["product"].length
+
+document.getElementById("Nrisk").innerHTML = Nrisk.toLocaleString()
 
 function randomize(id) {
   var el_to_change = document.getElementById(id);
