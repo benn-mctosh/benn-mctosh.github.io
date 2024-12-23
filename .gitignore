@@ -1,4 +1,5 @@
-
+cvfiles/*
+cv.html
 data
 template.html
 pics
@@ -17,8 +18,6 @@ linklist/linklist.txt
 *.gz
 cvtable.txt
 linklist/*
-
-cv2.html
 eat-god/eat-god.html
 eat-god/rebelliousArts.json
 gamow/purg.js
@@ -34,3 +33,8 @@ gamow/imgs/sGreenA.png
 gamow/thingy.html
 gamow/~$pcode.docx
 gamow/__pycache__/gamow.cpython-311.pyc
+cvfiles/cv.pdf
+cv.html
+index-clean.html
+cv.html
+cvfiles/cv.pdf
