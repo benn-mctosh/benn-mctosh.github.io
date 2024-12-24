@@ -422,12 +422,138 @@ clips = [
          "tags" : "culture, ideas"
      },   
     {
+        "hed" : "In the age of social media blasts, what’s the point of letters to the editor?",
+        "dek" : "On what happens when we allow a beloved old form to be swallowed up by the social media firehose.",
+        "outlet": "Poynter",
+        "date" : "2022-05",
+        "link" : "https://www.poynter.org/ethics-trust/2022/in-the-age-of-social-media-blasts-whats-the-point-of-letters-to-the-editor/",
+        "tags" : "ideas"
+    },
+    {
         "topic" : "the unfortunate Netflix series *Friends from College*.",
         "outlet": "Harvard Magazine",
         "date" : "2017-07",
         "link" : "https://www.harvardmagazine.com/2017/07/friends-from-college-netflix",
         "tags" : "culture"
-    }
+    },
+    {
+        "hed" : "From Lews & Clark to Michael Brown",
+        "dek" : "A profile of Walter Johnson and his radical history of my home city, St. Louis.",
+        "outlet": "Harvard Magazine",
+        "date" : "2020-05",
+        "link" : "https://harvardmagazine.com/2020/05/feature-walter-johnson",
+        "tags" : "ideas"
+    },
+    {
+        "hed" : "History from Below",
+        "dek" : "A profile of Vince Brown, a historian who will change the way you think about war, slavery, and anti-Black militarism.",
+        "outlet": "Harvard Magazine",
+        "date" : "2020-03",
+        "link" : "https://www.harvardmagazine.com/2020/03/feature-history-from-below",
+        "tags" : "ideas"
+    },   
+    {
+        "hed" : "The Trilemma",
+        "dek" : "A profile of economist Dani Rodrik and his field’s reckoning with free-market orthodoxy.",
+        "outlet": "Harvard Magazine",
+        "date" : "2019-07",
+        "link" : "https://harvardmagazine.com/2019/07/rodrik-trilemma-trade-globalization",
+        "tags" : "ideas"
+    },  
+    {
+        "hed" : "Sex and Due Process on Campus",
+        "dek" : "An essay on Title IX sexual assault guidelines, radical feminism, and due process.",
+        "outlet": "Current Affairs",
+        "date" : "2018-01",
+        "link" : "https://www.currentaffairs.org/2017/12/sex-and-due-process-on-campus",
+        "tags" : "ideas"
+    },   
+    {
+        "hed" : "The Purpose of Harvard Law School",
+        "dek" : "An essay on the clash between Harvard Law School’s public service ethos and its corporate law reality.",
+        "outlet": "Harvard Magazine",
+        "date" : "2016-08",
+        "link" : "https://www.harvardmagazine.com/2016/08/the-purpose-of-harvard-law-school",
+        "tags" : "ideas"
+    },   
+    {
+        "hed" : "A Language Out of Nothing",
+        "dek" : "A profile of linguist Kate Davidson and some of the questions that preoccupy people in her field.",
+        "outlet": "Harvard Magazine",
+        "date" : "2017-05",
+        "link" : "https://www.harvardmagazine.com/2017/04/a-language-out-of-nothing",
+        "tags" : "ideas"
+    },   
+    {
+        "topic" : "the Harvard Map Collection and the uses of maps.",
+        "outlet": "Harvard Magazine",
+        "date" : "2018-08",
+        "link" : "https://www.harvardmagazine.com/2018/08/map-collection-at-200",
+        "tags" : "ideas"
+    },   
+    {
+        "topic" : "Martin Puchner’s *The Language of Thieves*,",
+        "dek" : "in which a German-American scholar discovers that his grandfather was a Nazi.",
+        "outlet": "Harvard Magazine",
+        "date" : "2020-11",
+        "link" : "https://harvardmagazine.com/2020/11/montage-family-history",
+        "tags" : "books, ideas"
+    },  
+    {
+        "topic" : "the myth of the egalitarian kibbutz,",
+        "dek" : "a new book about kibbutzim, and the kinds of arguments economists make.",
+        "outlet": "The Forward",
+        "date" : "2018-04",
+        "link" : "https://forward.com/culture/books/398746/why-the-idea-of-an-egalitarian-kibbutz-was-always-a-myth/",
+        "tags" : "books, ideas"
+    },  
+    {
+        "topic" : "*The Story of Hebrew*,",
+        "dek" : "and the kinds of arguments linguists make.",
+        "outlet": "The Forward",
+        "date" : "2017-08",
+        "link" : "https://forward.com/culture/378315/how-hebrew-has-managed-to-survive/",
+        "tags" : "books, ideas"
+    },  
+    {
+        "topic" : "Dara Horn’s *Eternal Life*",
+        "dek" : "and what’s wrong with Jewish-American literature.",
+        "outlet": "Harvard Magazine",
+        "date" : "2018-01",
+        "link" : "https://harvardmagazine.com/2018/01/dara-horn-eternal-life",
+        "tags" : "books, ideas"
+    },  
+    {
+        "topic" : "Susan Ware’s *Why they Marched*,",
+        "dek" : "a new history of the women's suffrage movement.",
+        "outlet": "Harvard Magazine",
+        "date" : "2018-05",
+        "link" : "https://www.harvardmagazine.com/2019/05/suffrage-movement-activism",
+        "tags" : "books, ideas"
+    },  
+    {
+        "topic" : "the work of Bengali-British novelist Tahmima Anam.",
+        "outlet": "Harvard Magazine",
+        "date" : "2017-07",
+        "link" : "https://harvardmagazine.com/2017/07/a-postmodern-youth",
+        "tags" : "books, ideas"
+    },  
+    {
+        "hed" : "The Watchdog",
+        "dek" : "A profile of Bharat Ramamurti, the guy in charge of overseeing $500 billion in CARES Act stimulus money and a former adviser to Elizabeth Warren.",
+        "outlet": "Harvard Magazine",
+        "date" : "2020-09",
+        "link" : "https://harvardmagazine.com/2020/09/alumni-bharat-ramamurti",
+        "tags" : "policy"
+    },
+    {
+        "hed" : "ProMedica has a medical, moral duty to keep city's only abortion clinic open",
+        "dek" : "This is a throwback — an column in the Toledo Blade urging Ohio hospital system ProMedica to prevent Toledo's last abortion provider from shutting down. A few years later, the pro-choice advocates won!",
+        "outlet": "The Toledo Blade",
+        "date" : "2015-08",
+        "link" : "https://www.toledoblade.com/Marina-Bolotnikova/2015/08/02/ProMedica-has-medical-moral-duty-to-keep-city-s-only-abortion-clinic-open.html",
+        "tags" : "policy"
+    }  
 ]
 
 clips.sort((a, b) => (a.date > b.date ? -1 : 1));
