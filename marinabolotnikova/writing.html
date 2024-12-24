@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" sizes="192x192" href="mbicon.png">
+  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="stylesheet" href="W3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Marina N. Bolotnikova</title>
+  <meta property="og:title" content="Marina N. Bolotnikova"/>
+  <meta property="og:description" content="I’m an award-winning journalist focusing on factory farming and the criminalization of activists who fight it. I work as an editor for Vox's Future Perfect section, where we cover the world's big moral and technological problems."/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+</head>
+<body class="w3-white">
+<div class="clips" style="width:100%;max-width:800px;margin:auto;">
+
+  <h1><a href="index.html">marina n. bolotnikova</a></h1>
+  <div style="margin:auto;" class="w3-row navbar">
+    <a href="index.html">home</a>
+    <a href="writing">writing</a>
+    <a href="avi">avi</a>
+  </div>
+  <h3>select stories</h3>
+  <ul id="featured-stories">
+  </ul>
+  <p>see stories on: 
+   <span id="taglist"></span> 
+   <span hidden id="show_all">/ 
+     <button onclick="show_all()">[show all stories]</button>
+    </span>
+  </p>
+  <div id="results"></div>
+  </ul>
+    
+
+</div>
+
+<script type="text/javascript" src="clips.js"></script>
+
+
+<script>
+const tags = ["veganism", "activism", "meat", "animals", "cars", "culture", "ideas", "books", "environment", "health", "policy", "science", "featured"]
+
+const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function show_tags() { 
+  taglist = document.getElementById("taglist")
+  for (var i = 0; i < tags.length; i++) { 
+    if (tags[i] == "featured") {continue;}
+    if (i != 0) {taglist.append(document.createTextNode(" / "))}
+    let tag = tags[i];
+    var btn = document.createElement("button");
+    btn.id = tag
+    btn.onclick = function() { show_category(this.id); };
+    btn.innerHTML = tag
+    taglist.append(btn)
+  }
+}
+
+function get_month(s) { 
+  let n = parseInt(s);
+  return month[n - 1];
+}
+
+function ital_title(topic) { 
+  if (!topic.includes("*")) {return topic;}
+  let start =  topic.indexOf("*")
+  let end = topic.lastIndexOf("*")
+  let new_topic = topic.substr(0,start) + "<i>" + topic.substr(start + 1,end - start - 1) + "</i>" + topic.substr(end + 1,)
+  return new_topic;
+}
+
+function append_clip(clip, parent) { 
+  var newli = document.createElement("li");
+  var link = document.createElement("a");
+  link.href = clip.link
+  link.target = "_blank"
+  if (clip.hed == undefined) {
+    newli.append(document.createTextNode("On "));
+    link.innerHTML = ital_title(clip.topic);
+    newli.append(link)
+  }
+  else { 
+    link.innerHTML = clip.hed;
+    newli.append(link)
+    newli.append(document.createTextNode(" •"))
+  }
+  if (clip.dek == undefined) {newli.append(" ");}
+  else {newli.append(" " + clip.dek + " ");}
+  let ital = document.createElement("i");
+  ital.innerHTML = clip.outlet;
+  newli.append(ital)
+  let datestr = ", " + get_month(clip.date.substr(5,)) + " " + clip.date.substr(0,4);
+  newli.append(datestr)
+  parent.appendChild(newli);
+}
+
+function show_category(tag, parent_id = "tagged-stories")  {
+  console.log("showing " + tag)
+  if (parent_id == "tagged-stories") {
+    document.getElementById("results").innerHTML = ""
+    document.getElementById("show_all").hidden = false;
+    var hed = document.createElement("h3");
+    var list = document.createElement("ul"); 
+    hed.innerHTML = tag;
+    list.id = "tagged-stories";
+    document.getElementById("results").appendChild(hed);
+    document.getElementById("results").appendChild(list);
+  };
+  var parent = document.getElementById(parent_id)
+  for (var i = 0; i < clips.length; i++) { 
+    if (clips[i].tags.includes(tag)) { 
+      append_clip(clips[i], parent)
+    }
+  }
+  
+}
+
+function show_all() {
+  document.getElementById("show_all").hidden = true;
+  results = document.getElementById("results");
+  results.innerHTML = "";
+  var incl_clips = [];
+  for (var i = 0; i < tags.length; i++) {
+    if (tags[i] == "featured") {continue;}
+    console.log(incl_clips);
+    var hed = document.createElement("h3");
+    hed.innerHTML = tags[i];
+    
+    var ul = document.createElement("ul") 
+    
+    for (var j = 0; j < clips.length; j++) { 
+      if (clips[j].tags.includes(tags[i]) & !incl_clips.includes(j)) { 
+        incl_clips.push(j);
+        append_clip(clips[j], ul)
+      }
+    }
+    var n = ul.childElementCount;
+    if (n > 0) { 
+      results.appendChild(hed)
+      results.appendChild(ul)
+    }
+  }
+}
+
+show_category("featured", parent_id = "featured-stories", ) 
+show_tags()
+show_all() 
+
+
+</script>
+
+</body>
+</html>
