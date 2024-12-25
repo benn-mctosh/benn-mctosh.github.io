@@ -368,3 +368,9 @@ button {
   border-style: none!important;
   background-color: white;
 }
+
+.contact img {
+  width: 20px;
+  height: auto;
+  margin: 3px 4px;
+}
