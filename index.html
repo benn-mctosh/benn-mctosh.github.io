@@ -125,25 +125,23 @@ function show_me(section) {
   }
   console.log("showing", section);
   document.getElementById("home").hidden = true;
-  document.getElementById(section).hidden = false;
+  document.getElementById(section).removeAttribute("hidden");
   let btn_name = section + "_btn";
   document.getElementById(btn_name).style.backgroundColor = "rgb(226, 239, 242)" 
-  document.getElementById("home_btn").hidden = false;
-  document.getElementById("close").hidden = false;
+  document.getElementById("close").removeAttribute("hidden");
 
 }
 
 function go_home() {
   console.log("going home");
-  document.getElementById("home").hidden  = false;
+  document.getElementById("home").removeAttribute("hidden");
   for (var i = 0; i < sections.length; i++) {
-    sections[i].hidden = true;
+    sections[i].hidden = "until-found";
   }
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = "rgb(135, 206, 235)"
   }
-  document.getElementById("home_btn").hidden = true;
-  document.getElementById("close").hidden = true;
+  document.getElementById("close").hidden = "true";
 
 }
 
