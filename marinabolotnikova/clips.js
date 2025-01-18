@@ -33,7 +33,7 @@ clips = [
     }, 
     {
         "hed" : "How Factory Farming Ends",
-        "dek" : "After decades of advocacy against factory farming, the environmental, ethical, and spiritual tragedy it represents is only growing larger. I curated and edited a collection of essays, by writers from across the movement against factory farming.",
+        "dek" : "I brought together 10 writers & thinkers for this collection of stories on the past and future of the fight against one of the great moral calamaties of our time.",
         "outlet": "Vox",
         "date" : "2024-08",
         "link" : "https://www.vox.com/future-perfect/364288/how-factory-farming-ends-animal-rights-vegans-climate-ethics",
@@ -117,7 +117,7 @@ clips = [
         "outlet": "Vox",
         "date" : "2023-09",
         "link" : "https://www.vox.com/future-perfect/23868483/cars-roads-roadkill-crossing-goldfarb-national-parks",
-        "tags" : "animals, cars, environment"
+        "tags" : "animals, cars, environment, books"
     },              
     {
         "hed" : "What if AI treats humans the way we treat animals?",
@@ -465,8 +465,8 @@ clips = [
         "dek" : "An essay on Title IX sexual assault guidelines, radical feminism, and due process.",
         "outlet": "Current Affairs",
         "date" : "2018-01",
-        "link" : "https://www.currentaffairs.org/2017/12/sex-and-due-process-on-campus",
-        "tags" : "ideas"
+        "link" : "https://www.currentaffairs.org/news/2018/01/sex-and-due-process-on-campus",
+        "tags" : "ideas" 
     },   
     {
         "hed" : "The Purpose of Harvard Law School",

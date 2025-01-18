@@ -26,7 +26,7 @@
   <h3>select stories</h3>
   <ul id="featured-stories">
   </ul>
-  <p>see stories on: 
+  <p style="text-align:center" id="all-clips">see stories on:<br> 
    <span id="taglist"></span> 
    <span hidden id="show_all">/ 
      <button onclick="show_all()">[show all stories]</button>
@@ -42,6 +42,11 @@
 
 
 <script>
+
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, window.scrollY - 20);
+});
+
 const tags = ["activism", "meat", "veganism", "animals", "cars", "culture", "ideas", "books", "environment", "health", "policy", "science", "featured"]
 
 const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -86,10 +91,12 @@ function append_clip(clip, parent) {
   else { 
     link.innerHTML = clip.hed;
     newli.append(link)
+    // newli.append(document.createElement('br'))
     newli.append(document.createTextNode(" •"))
   }
   if (clip.dek == undefined) {newli.append(" ");}
   else {newli.append(" " + clip.dek + " ");}
+  // newli.append(document.createElement('br'));
   let ital = document.createElement("i");
   ital.innerHTML = clip.outlet;
   newli.append(ital)
@@ -109,6 +116,12 @@ function show_category(tag, parent_id = "tagged-stories")  {
     list.id = "tagged-stories";
     document.getElementById("results").appendChild(hed);
     document.getElementById("results").appendChild(list);
+    document.getElementById(tag).style.textDecoration = "underline"
+    for (var i = 0; i < tags.length; i++) {
+      if (![tag, "featured"].includes(tags[i])) {
+        document.getElementById(tags[i]).style.textDecoration = "none"
+      }
+    }
   };
   var parent = document.getElementById(parent_id)
   for (var i = 0; i < clips.length; i++) { 
@@ -116,7 +129,7 @@ function show_category(tag, parent_id = "tagged-stories")  {
       append_clip(clips[i], parent)
     }
   }
-  
+  location.hash = "#" + tag
 }
 
 function show_all() {
@@ -144,12 +157,22 @@ function show_all() {
       results.appendChild(ul)
     }
   }
+  for (var i = 0; i < tags.length; i++) {
+    if ("featured" != tags[i]) {
+      document.getElementById(tags[i]).style.textDecoration = "none"
+    }
+  }
+  location.hash = "#featured-stories"
 }
 
+var navtag = location.hash.slice(1,)
+console.log(navtag)
 show_category("featured", parent_id = "featured-stories", ) 
 show_tags()
-show_all() 
-
+show_all()
+location.hash = "#" + navtag
+if (tags.includes(navtag)) { show_category(navtag); }
+else if (navtag == "all-stories") { show_all(); }
 
 </script>
 
