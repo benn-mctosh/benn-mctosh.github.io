@@ -126,14 +126,10 @@ document.getElementById("Nrisk").innerHTML = Nrisk.toLocaleString()
 document.getElementById("Nauth").innerHTML = Nauth.toLocaleString()
 
 function randomize(id) {
-  console.log(id)
   var el_to_change = document.getElementById(id);
-  console.log(el_to_change)
   var curr = el_to_change.innerHTML
   if (( Math.random() < 0.3) && (id == "interjection")) {
-    console.log("blank")
     el_to_change.innerHTML = ""
-    return
   }
   else {
     var l = lookup[id].length
@@ -141,19 +137,51 @@ function randomize(id) {
      el_to_change.innerHTML = lookup[id][Math.floor(Math.random() * l)]
     }
   }
+  const param = keyToParam[id];
+  if (param) {
+    let idx;
+    if (id === "interjection" && el_to_change.innerHTML === "") {
+      idx = 255;
+    } else {
+      idx = lookup[id].indexOf(el_to_change.innerHTML);
+    }
+    if (idx < 0) idx = 255;
+    params.set(param, idx.toString(16).padStart(2, "0"));
+    const url = new URL(window.location);
+    url.search = params.toString();
+    window.history.replaceState({}, "", url);
+  }
   return 
 }
 
 const d = new Date();
 document.getElementById("dateline").innerHTML = d.toDateString()
+let params = new URLSearchParams(document.location.search);
 
-randomize("interjection")
-randomize("authority")
-randomize("contaminant")
-randomize("hazard")
-randomize("modernity")
-randomize("product")
+const keyToParam = {
+  "interjection": "i",
+  "authority": "a",
+  "contaminant": "c",
+  "hazard": "h",
+  "modernity": "m",
+  "product": "p"
+};
 
+for (const key in lookup) {
+  if (lookup[key].length > 200) {console.log("Warning: Key " + key + "> 200 items")}
+  if (lookup.hasOwnProperty(key)) {
+    const param = keyToParam[key];
+    if (param && params.has(param)) {
+      const idx = parseInt(params.get(param), 16);
+      const el = document.getElementById(key);
+      if (el && !isNaN(idx) && idx >= 0 && idx < lookup[key].length) {
+        el.innerHTML = lookup[key][idx];
+      }
+    } else {
+      randomize(key);
+    }
+  }
+}
 
 </script>
 
