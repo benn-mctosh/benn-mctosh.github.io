@@ -22,12 +22,23 @@
 </head>
 <body class="w3-khaki" style="line-height:1.6;">
 
-  <!-- header -->
+  <!-- space -->
 
 
   <div class="w3-row w3-khaki w3-container" style="padding-top:50px;padding-bottom:50px" id="top">
 
-  <!-- bio -->
+  <!-- headline -->
+<a style="max-width:500px;width:80%;display:block;margin-top:20px;margin-left:auto;margin-right:auto;box-shadow:5px 5px tan" href="#" onclick="rerollAll()" class="w3-button w3-light-green w3-hover-green">
+  ♻️ Manufacture another risk ♻️
+</a>
+<p style="margin-bottom:50px;text-align:center">Or roll the dice one at a time: 
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('interjection')">🎲</a>&nbsp;
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('authority')">🎲</a>&nbsp;
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('contaminant')">🎲</a>&nbsp;
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('product')">🎲</a>&nbsp;
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('hazard')">🎲</a>&nbsp;
+  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('modernity')">🎲</a>
+</p>
   <div style="padding-top:0px;">
     <div id="news" style="display:block;margin-left:auto;margin-right:auto;width:90%;max-width:750px" class="w3-white card-item">
       <h4 style="font-size:small;color:gray">An <i>Ulrich Beacon</i> Breaking News Update</h4>
@@ -43,18 +54,6 @@
       <p>By Anton E. Gidd in <i>The Ulrich Beacon</i><br><span id="dateline">November 6, 2024</span></p>
     </div>
   </div>
-<a style="max-width:500px;width:80%;display:block;margin-top:20px;margin-left:auto;margin-right:auto;box-shadow:5px 5px tan" href="#" onclick="window.location.reload();" class="w3-button w3-light-green w3-hover-green">
-  ♻️ Manufacture another risk ♻️
-</a>
-<p style="margin-bottom:-10px;text-align:center">Or roll the dice one at a time:</p>
-<p style="padding-top:0px;text-align:center">
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('interjection')">🎲</a>&nbsp;
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('authority')">🎲</a>&nbsp;
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('contaminant')">🎲</a>&nbsp;
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('product')">🎲</a>&nbsp;
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('hazard')">🎲</a>&nbsp;
-  <a style="padding:2px 7px;box-shadow:3px 3px gray" class="w3-button w3-white w3-hover-gray" href="#" onclick="randomize('modernity')">🎲</a>
-</p>
 <p style="font-size:small;text-align:center">Inspired by 
   <a href="https://whyy.org/segments/what-that-one-study-on-black-plastic-got-wrong/" target="_blank">flame retardants / black plastic / e-waste</a>
 </p>
@@ -124,6 +123,12 @@ Nauth = lookup["authority"].length
 
 document.getElementById("Nrisk").innerHTML = Nrisk.toLocaleString()
 document.getElementById("Nauth").innerHTML = Nauth.toLocaleString()
+
+function rerollAll() {
+  for (const key in lookup) {
+    randomize(key);
+  }
+}
 
 function randomize(id) {
   var el_to_change = document.getElementById(id);
