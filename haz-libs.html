@@ -112,9 +112,10 @@ const lookup =
         "printer cartridges", "tires", "natural gas", "coffee", "chocolate", "turmeric", "contact lens solution", "air fryer", "toaster oven", 
         "blender", "parchment paper", "ultra-processed foods", "AI agents", "B2B SAAS", "information environment", "media ecosystem", "city streets"
       ],
-      "authority" : ["RFK Jr. says", "Scientists say", "Experts say", "Crunchy moms are saying", "CDC announces", "JAMA study reveals", 
+      "authority" : ["RFK Jr. claims", "Scientists say", "Experts say", "Crunchy moms are saying", "CDC announces", "JAMA study reveals", 
         "Surgeon General warns", "Joe Rogan guest speculates", "TikTokers speculate", "Pope's new encyclical bemoans", "A chatbot told our reporter",
-        "Mysterious stone tablet warns", "EU regulators complain", "This video our reporter saw said", "A shroom entity is warning me" 
+        "Mysterious stone tablet warns", "EU regulators complain", "This video our reporter saw said", "A shroom entity is proclaiming to me", "Trump suggests", 
+        "Musk tweets", "Fauci cautions", "Harvard researchers find", "Doctors warn" 
       ]
      }
 
@@ -129,7 +130,7 @@ function randomize(id) {
   var el_to_change = document.getElementById(id);
   console.log(el_to_change)
   var curr = el_to_change.innerHTML
-  if (( Math.random() < 0.5) && (id == "interjection")) {
+  if (( Math.random() < 0.3) && (id == "interjection")) {
     console.log("blank")
     el_to_change.innerHTML = ""
     return
