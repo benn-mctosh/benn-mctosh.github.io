@@ -16,7 +16,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-GC5DMQ2ZCJ');
     </script>
 </head>
@@ -43,8 +42,8 @@
     <div id="news" style="display:block;margin-left:auto;margin-right:auto;width:90%;max-width:750px" class="w3-white card-item">
       <h4 style="font-size:small;color:gray">An <i>Ulrich Beacon</i> Breaking News Update</h4>
       <h2 style="font-family:georgia,serif;">
-        <span id="interjection">Uh-oh!</span> 
-        <span id="authority">scientists say</span> that 
+        <span id="interjection"></span> 
+        <span id="authority">Scientists say</span> that 
         <span id="contaminant">flame retardants</span> in your 
         <span id="product">black plastic kitchen utensils</span> can cause 
         <span id="hazard">cancer</span>
@@ -182,7 +181,11 @@ for (const key in lookup) {
       if (el && !isNaN(idx) && idx >= 0 && idx < lookup[key].length) {
         el.innerHTML = lookup[key][idx];
       }
-    } else {
+      else {
+        randomize(key);
+      }
+    }
+    else {
       randomize(key);
     }
   }
