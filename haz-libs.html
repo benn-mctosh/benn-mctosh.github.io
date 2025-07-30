@@ -50,7 +50,7 @@
       </h2>
       <h4>Apparently it’s all to do with <span id="modernity">e-waste recycling</span>, as if that somehow explains it</h3>
       <hr>
-      <p>By Anton E. Gidd in <i>The Ulrich Beacon</i><br><span id="dateline">November 6, 2024</span></p>
+      <p>By Anton E. Gidd in <i>The Ulrich Beacon</i><br><span id="dateline">May 15, 2044</span></p>
     </div>
   </div>
 <p style="font-size:small;text-align:center">Inspired by 
@@ -59,7 +59,33 @@
 <p style="font-size:small;text-align:center">
   Now with <span id="Nrisk">5,000,000</span> possible risks from <span id="Nauth">10</span> authorities!
 </p>
-
+<p style="font-size:small;text-align:center;">Spread the word about:</p>
+<table style="font-size:small;margin-left:auto;margin-right:auto;max-width:750px">
+<tr>
+  <td id="a-slug">Authority</td>
+  <td><button id="a-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+<tr>
+  <td id="c-slug">Contaminant</td>
+  <td><button id="c-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+<tr>
+  <td id="p-slug">Product</td>
+  <td><button id="p-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+<tr>
+  <td id="h-slug">Hazard</td>
+  <td><button id="h-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+<tr>
+  <td id="m-slug">Modernity</td>
+  <td><button id="m-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+<tr>
+  <td id="all-slug">All of the above</td>
+  <td><button id="all-copy" onclick="copy_url(this)">⧉</button></td>
+</tr>
+</table>
 
 </div>
   <!-- footer -->
@@ -142,6 +168,12 @@ function randomize(id) {
     }
   }
   const param = keyToParam[id];
+  if (param != 'i') {
+    let cell = document.getElementById(id + "-slug");
+    if (cell) {
+      cell.innerHTML = el_to_change.innerHTML;
+    }
+  }
   if (param) {
     let idx;
     if (id === "interjection" && el_to_change.innerHTML === "") {
@@ -171,6 +203,8 @@ const keyToParam = {
   "product": "p"
 };
 
+
+// Either randomize or set the text based on URL parameters
 for (const key in lookup) {
   if (lookup[key].length > 200) {console.log("Warning: Key " + key + "> 200 items")}
   if (lookup.hasOwnProperty(key)) {
@@ -190,6 +224,9 @@ for (const key in lookup) {
     }
   }
 }
+ 
+// 
+
 
 </script>
 
