@@ -1,5 +1,4 @@
 cvfiles/*
-cv.html
 old/*
 data
 template.html
@@ -34,8 +33,4 @@ gamow/imgs/sGreenA.png
 gamow/thingy.html
 gamow/~$pcode.docx
 gamow/__pycache__/gamow.cpython-311.pyc
-cvfiles/cv.pdf
-cv.html
 index-clean.html
-cv.html
-cvfiles/cv.pdf
