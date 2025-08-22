@@ -4,7 +4,7 @@
   <link rel="icon" sizes="192x192" href="pics/favicosahedron.png">
   <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
   <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
-  <link rel="stylesheet" href="styles/W3.css">
+  <link rel="stylesheet" href="styles/W3-serif.css">
   <title>Dice</title>
   <meta property="og:title" content="Dice"/>
   <meta property="og:description" content="Every day is another roll of the dice"/>
@@ -20,6 +20,8 @@
 
 .aDie {
   white-space: nowrap;
+  text-decoration: none !important;
+  color: black !important;
 }
 
 .d4 {
@@ -265,7 +267,7 @@ function reSum() {
   var dieCount = diceTray.childElementCount
   if (dieCount == 0) {
     console.log("no dice")
-    totalField.innerHTML = "";
+    totalField.innerHTML = "0";
     return;
   }
   for (i = 0; i < dieCount; i++) {
