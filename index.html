@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 
-  <link rel="icon" href="pics/favicosahedron.png"/>
-  <link rel="shortcut icon" href="pics/favicosahedron.png" type="image/png"/>
-  <link rel="apple-touch-icon" href="pics/favicosahedron.png" type="image/png"/>
+  <link rel="icon" href="pics/bamc.png"/>
+  <link rel="shortcut icon" href="pics/bamc.png" type="image/png"/>
+  <link rel="apple-touch-icon" href="pics/bamc.png" type="image/png"/>
   <link rel="stylesheet" href="styles/W3-serif.css">
   <title>Bennett McIntosh</title>
   <meta property="og:title" content="Bennett McIntosh"/>
@@ -165,13 +165,7 @@ function show_me(section) {
     heading.focus();
   }
   document.getElementById("close").classList.remove("sr-only");
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].setAttribute("aria-selected", "false");
-  }
-  let btn = document.getElementById(section + "_btn");
-  if (btn) {
-    btn.setAttribute("aria-selected", "true");
-  }
+  
   
 }
 
