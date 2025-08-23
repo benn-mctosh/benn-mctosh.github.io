@@ -56,13 +56,15 @@
       <p>In past lives I’ve been a <a onclick=show_me("writing") href="#writing">wordsmith</a> and an <s>al</s><a href="https://hecht.princeton.edu/" target="_blank">chemist</a>.</p>
       <div class="announcebox" style="margin-bottom:20px"><p>📣 I am currently interviewing researchers at the interface of genomics and the social sciences (incl. economics, psychology, social epidemiology...) about their experiences with data access, data sharing, and related matters. If you are interested in participating, you can <a href="mailto:bamcintosh@wisc.edu">email me</a> or <a href="https://calendly.com/bamcintosh/meeting" target="_blank">schedule a meeting here</a>.</p></div>
     </div>
-    <div style="line-height:50px;display:block;justify-content:center">
-        <a href="#cv" id="cv_btn" onclick=show_me("cv") class="navbtn">CV</a>
-        <a href="#research" id="research_btn" onclick=show_me("research") class="navbtn">Research</a>
-        <a href="#teaching" id="teaching_btn" onclick=show_me("teaching") class="navbtn">Teaching</a>
-        <a href="#news" id="news_btn" onclick=show_me("news") class="navbtn">News</a>
-        <a href="#writing" id="writing_btn" onclick=show_me("writing") class="navbtn">Public&nbsp;Writing</a>
-        <a href="#misc" id="misc_btn" onclick=show_me("misc") class="navbtn">Misc.</a>  
+    <div role="tablist" style="line-height:50px;display:block;justify-content:center">
+        <a role="tab" aria-selected="false" aria-controls="cv-panel" href="#cv" id="cv_btn" class="navbtn">CV</a>
+        <a role="tab" aria-selected="false" aria-controls="research-panel" href="#research" id="research_btn" class="navbtn">Research</a>
+        <a role="tab" aria-selected="false" aria-controls="teaching-panel" href="#teaching" id="teaching_btn" class="navbtn">Teaching</a>
+        <a role="tab" aria-selected="false" aria-controls="news-panel" href="#news" id="news_btn" class="navbtn">News</a>
+        <a role="tab" aria-selected="false" aria-controls="writing-panel" href="#writing" id="writing_btn" class="navbtn">Public&nbsp;Writing</a>
+        <a role="tab" aria-selected="false" aria-controls="misc-panel" href="#misc" id="misc_btn" class="navbtn">Misc.</a> 
+        <a role="tab" aria-selected="true" aria-controls="home-panel" href="#home" style="position:absolute;top:-12px;right:0px;margin:10px;border:none;text-decoration:none!important;" id="close">❌</a>   
+
     </div>
     <div id="cv" class="section">
        <p>If your browser can’t view the embedded PDF, <a href="cvfiles/cv.pdf" target="_blank">download it here</a></p>
@@ -114,7 +116,7 @@
     </div>
     <div id="misc" class="section">
       <h3>Miscellany</h3>
-      <p>You shoud check out <a target="_blank" href="https://www.marinabolotnikova.com/writing">Marina Bolotnikova's journalism</a>. In my (not entirely unbiased) opinion, it's some of the best, most important writing out there.
+      <p>You should check out <a target="_blank" href="https://www.marinabolotnikova.com/writing">Marina Bolotnikova's journalism</a>. In my (not entirely unbiased) opinion, it's some of the best, most important writing out there.
       <h4>Games</h4>
           <p>Some of these are new ways of playing games that already exist—in-browser tools that help or encourage you to play with others, either over email or IRL (that’s both a manifesto of what the Internet should be for and an artifact of me being a noob at web stuff and not rolling my own infrastructure). Others are just things that I wanted to exist, so I made them, because that’s the <a href="https://nora.zone/manifesto.html">joy of having your own website</a>.</p>
           <div style="line-height:30px">
@@ -133,7 +135,6 @@
         </div>
       </div>
     </div>
-    <a href="#home" style="position:absolute;top:0px;right:0px;margin:10px;border:none;background-color:white;text-decoration:none!important;" hidden id="close" onclick="go_home()">❌</a>   
 
 </div>
 
@@ -145,18 +146,32 @@ const buttons = document.getElementsByClassName("navbtn");
 
 function show_me(section) {
 
-    for (var i = 0; i < sections.length; i++) {
-      sections[i].hidden = "until-found";
-    }
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].style.backgroundColor = "rgb(135, 206, 235)"
-    }
-    console.log("showing", section);
-    document.getElementById("home").hidden = true;
-    document.getElementById(section).removeAttribute("hidden");
-    let btn_name = section + "_btn";
-    document.getElementById(btn_name).style.backgroundColor = "rgb(226, 239, 242)" 
-    document.getElementById("close").removeAttribute("hidden");
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].hidden = "until-found";
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].style.backgroundColor = "rgb(135, 206, 235)"
+  }
+  console.log("showing", section);
+  document.getElementById("home").hidden = true;
+  document.getElementById(section).removeAttribute("hidden");
+  let btn_name = section + "_btn";
+  document.getElementById(btn_name).style.backgroundColor = "rgb(226, 239, 242)" 
+  document.getElementById("close").removeAttribute("hidden");
+  let sectionElem = document.getElementById(section);
+  let heading = sectionElem.querySelector("h1, h2, h3, h4, h5, h6");
+  if (heading) {
+    heading.setAttribute("tabindex", "-1");
+    heading.focus();
+  }
+  document.getElementById("close").classList.remove("sr-only");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].setAttribute("aria-selected", "false");
+  }
+  let btn = document.getElementById(section + "_btn");
+  if (btn) {
+    btn.setAttribute("aria-selected", "true");
+  }
   
 }
 
@@ -169,8 +184,11 @@ function go_home() {
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].style.backgroundColor = "rgb(135, 206, 235)"
   }
-  document.getElementById("close").hidden = "true";
-
+  document.getElementById("close").classList.add("sr-only");
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].setAttribute("aria-selected", "false");
+  }
+  document.getElementById("close").setAttribute("aria-selected", "true");
 }
 
 for (var i = 0; i < sections.length; i++) {
@@ -180,8 +198,18 @@ for (var i = 0; i < sections.length; i++) {
 
 window.addEventListener("hashchange", function () {
     window.scrollTo({top:0});
+    var section = window.location.hash.substr(1,);
+    console.log(section);
+    var content = document.getElementById(section);
+    if (section == "home") { 
+      go_home();
+    }
+    else if (content != null)  {
+      show_me(section)
+    }
 });
 
+// Keep outside of functions to run on page load
 if(window.location.hash) {
     var section = window.location.hash.substr(1,);
     console.log(section);
