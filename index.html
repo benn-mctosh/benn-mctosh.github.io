@@ -50,27 +50,77 @@
         </div>
     </div>
     <div style="position:relative" class="w3-container w3-col m7 w3-white card-item">
-      <div id="home">
+      <div id="home" role="tabpanel" aria-labelledby="home_btn" class="section">
       <h2>Bennett McIntosh</h2>
       <p>I am a PhD candidate in <a href="https://history.wisc.edu/fields-programs-and-working-groups/history-of-science-medicine-and-technology/" target="_blank">History of Sci/Med/Tech</a> and <a href="https://sts.wisc.edu" target="_blank">Science and Technology Studies</a> at the University of Wisconsin—Madison. I study scientific data sharing in 21st century: how and why it happens (or doesn’t happen), and how that shapes science. My dissertation, <i>Genetic Associations: A Data-Centric History of the Social Genome, 1990–Present</i>, describes the tight relationship between the data structures and social structures of social science genetics, which is a 21st-century research program that seeks to apply genetic tools and data to traditional social science questions about inter-individual variation.</p>
       <p>In past lives I’ve been a <a href="#writing">wordsmith</a> and an <s>al</s><a href="https://hecht.princeton.edu/" target="_blank">chemist</a>.</p>
       <div class="announcebox" style="margin-bottom:20px"><p>📣 I am currently interviewing researchers at the interface of genomics and the social sciences (incl. economics, psychology, social epidemiology...) about their experiences with data access, data sharing, and related matters. If you are interested in participating, you can <a href="mailto:bamcintosh@wisc.edu">email me</a> or <a href="https://calendly.com/bamcintosh/meeting" target="_blank">schedule a meeting here</a>.</p></div>
     </div>
-    <div role="tablist" style="line-height:50px;display:block;justify-content:center">
-        <a role="tab" aria-selected="false" aria-controls="cv-panel" href="#cv" id="cv_btn" class="navbtn">CV</a>
-        <a role="tab" aria-selected="false" aria-controls="research-panel" href="#research" id="research_btn" class="navbtn">Research</a>
-        <a role="tab" aria-selected="false" aria-controls="teaching-panel" href="#teaching" id="teaching_btn" class="navbtn">Teaching</a>
-        <a role="tab" aria-selected="false" aria-controls="news-panel" href="#news" id="news_btn" class="navbtn">News</a>
-        <a role="tab" aria-selected="false" aria-controls="writing-panel" href="#writing" id="writing_btn" class="navbtn">Public&nbsp;Writing</a>
-        <a role="tab" aria-selected="false" aria-controls="misc-panel" href="#misc" id="misc_btn" class="navbtn">Misc.</a> 
-        <a role="tab" aria-selected="true" aria-controls="home-panel" class="sr-only" href="#home" style="position:absolute;top:-12px;right:0px;margin:10px;border:none;text-decoration:none!important;" id="close">❌</a>   
+    <div role="tablist" style="line-height:35px;display:block;justify-content:center;margin-top:10px">
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="cv" 
+          id="cv_btn" 
+          class="navbtn">
+          CV
+        </button>
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="research" 
+          id="research_btn" 
+          class="navbtn">
+          Research
+        </button>
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="teaching" 
+          id="teaching_btn" 
+          class="navbtn">
+          Teaching
+        </button>
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="news" 
+          id="news_btn" 
+          class="navbtn">
+          News
+        </button>
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="writing" 
+          id="writing_btn" 
+          class="navbtn">
+          Public&nbsp;Writing
+        </button>
+        <button 
+          role="tab" 
+          aria-selected="false" 
+          aria-controls="misc" 
+          id="misc_btn" 
+          class="navbtn">
+          Misc.
+        </button> 
+        <button 
+          role="tab" 
+          aria-selected="true" 
+          aria-controls="home"           
+          style="position:absolute;top:10px;right:0px;margin:10px;border:none;text-decoration:none!important;background-color:white;font-size:20px;line-height:20px;box-shadow:none!important;border-radius:0px;cursor:pointer;" 
+          id="home_btn"
+          hidden>
+          ❌
+        </button>   
 
     </div>
-    <div id="cv" class="section">
+    <div id="cv" role="tabpanel" aria-labelledby="cv_btn" class="section">
        <p>If your browser can’t view the embedded PDF, <a href="cvfiles/cv.pdf" target="_blank">download it here</a></p>
        <object data="cvfiles/cv.pdf" height="700px" width="100%"></object>
     </div>
-    <div id="research" class="section">
+    <div id="research" role="tabpanel" aria-labelledby="research_btn" class="section">
       <h3>Research</h3>
       <div class="announcebox"><p>📣 May 2025: Read my preprint with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> on data sharing, environmental regulation, and scientific controvrsy:  <a href="https://osf.io/preprints/metaarxiv/jfbr8_v1" target="_blank">“Adversarial reanalysis and the challenge of open data in regulatory science”</a>!</p></div>
       <p>I work at the intersection of History and Science and Technology Studies (STS), examining how scientists, the questions they ask, the technology they use, and the world in which they live in all shape each other. I am interested in scientists&#8217; data practices—how they make their data useable, portable, and intelligible—and what these practices mean <i>about</i> and <i>for</i> the context in which this science happens.</p>
@@ -78,7 +128,7 @@
       <p>My dissertation, <i>Genetic Associations: A Data-Centric History of the Social Genome, 1990–Present</i>, is an historical and ethnographic study of “social genomics,” an interdisciplinary research community that seeks to apply genomic and epigenomic data to the study of social outcomes and inequality. Where previous scholarship has approached social genomics by asking how social phenomena become subject to the authority of biogenetic discourse, my focus on the data practices of social genomics researchers—many of them trained in the statistical social sciences—foregrounds the role of tools and concerns endogenous to the social sciences, from the “replication crisis” in psychology to the “credibility revolution” in economics. The dissertation also explores data sharing as an arena for implicit and explicit contestation over the boundaries between science and pseudoscience.</p>
       <p>I am also working on a project examining the relationship between open science, reproducibility, and environmental regulation with <a target="_blank" href="http://nicolenelson.net">Nicole Nelson</a> and <a target="_blank" href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa">Kelsey Ichikawa</a>.</p>
     </div>
-    <div id="teaching" class="section">
+    <div id="teaching" role="tabpanel" aria-labelledby="teaching_btn" class="section">
       <h3>Teaching</h3>
       <h4>As Principal Instructor</h5>
       <div class="announcebox">
@@ -93,14 +143,14 @@
         <li><b>The Making of Modern Science</b> (Hist Sci 202): Spring 2022</li>
       </ul>
     </div>
-    <div id="news" class="section">
+    <div id="news" role="tabpanel" aria-labelledby="news_btn" class="section">
       <h3>Recent News</h3>
          <p><b>July 2025:</b> <a href="https://kathrynemetcalf.com/" target="_blank">Kathryne Metcalf</a> and I had a great time running the panel “Rethinking ‘Population’: Histories of an Idea in Human Genetics” at <a href="https://ishpssb2025.icbas.up.pt/" target="_blank">ISHPSSB</a>. Thanks to <a href="https://www.sps.ed.ac.uk/staff/carolina-mayes" target="_blank">Carolina Mayes</a> for joining us and <a href="https://www.uu.nl/staff/ANievesDelgado" target="_blank">Abigail Nieves Delgado</a> for stepping in to chair on short notice!</p>
          <p><b>June 2025:</b> My review of Dalton Conley’s <i>The Social Genome: The New Science of Nature and Nurture</i> is <a href="https://networks.h-net.org/group/reviews/20072005/mcintosh-conley-social-genome-new-science-nature-and-nurture" target="_blank">out now on H-Sci-Med-Tech</a></p>
          <p><b>May 2025:</b> 🚨 Preprint alert! 🚨 “Adversarial reanalysis and the challenge of open data in regulatory science” with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> , is out now <a href="https://osf.io/preprints/metaarxiv/jfbr8_v1" target="_blank">on MetaArXiv</a></p>
          <p><b>May 2025:</b> I presented at <i>both</i> The Advances in Social Genomics Conference (<a href="https://isg.wisc.edu/events/the-advances-in-social-genomics-conference/" target="_blank">TAGC</a>) in Madison, WI, and the European Social Science Genomics Network (<a href="https://essgn.org/essgn-conference-iv/" target="_blank">ESSGN</a>) conference in Bristol, UK this month. Thanks to all the geneticists and social scientists at both conferences for their thoughtful engagement with my work.</p>
    </div>
-    <div id="writing" class="section">
+    <div id="writing" role="tabpanel" aria-labelledby="writing_btn" class="section">
       <h3>Writing</h3>
       <p>I worked for several years as a full-time journalist and science writer, covering genetics, neuroscience, technology, and assorted other topics. Nowdays, most of my writing is academic, though I occasionally <a target="_blank" href="https://blog.bennettmcintosh.com">blog about what I'm reading</a>, and still take the rare writing or editing gig.</p>
       <p>Some of my favorites:</p>
@@ -114,7 +164,7 @@
       <p>You can browse my work in <i><a target="_blank" href="https://paw.princeton.edu/bio/bennett-mcintosh">Princeton Alumni Weekly</a></i>, <i><a target="_blank" href="https://www.harvardmagazine.com/profile/Bennett-McIntosh">Harvard Magazine</a></i>, <i><a target="_blank" href="https://www.pbs.org/wgbh/nova/author/bennett-mcintosh/">NOVAnext</a></i>, <i><a target="_blank" href="https://magazine.scienceforthepeople.org/vol22-2/the-science-journalism-we-need/">Science for the People</a></i>, <i><a target="_blank" href="https://www.whoi.edu/oceanus/author/bennett-mcintosh/">Oceanus</a></i></li>, and <i><a target="_blank" href="files/McIntosh-Tenderly-Animals-Covid.pdf">Tenderly</a></i>; or <a href="cvfiles/cv.pdf" target="_blank">download my CV</a> to view the full list.</p>
       <p>For inquiries related to my writing and editing, please email <b>bennettmcintosh аt duck dоt cоm</b>. If you are pitching a metaverse product, please include "[spam]" in the subject line to ensure your pitch receives appropriate attention.</p>
     </div>
-    <div id="misc" class="section">
+    <div id="misc" role="tabpanel" aria-labelledby="misc_btn" class="section">
       <h3>Miscellany</h3>
       <p>You should check out <a target="_blank" href="https://www.marinabolotnikova.com/writing">Marina Bolotnikova's journalism</a>. In my (not entirely unbiased) opinion, it's some of the best, most important writing out there.
       <h4>Games</h4>
@@ -140,9 +190,118 @@
 
 <script>
 
-const sections = document.getElementsByClassName("section");
-const buttons = document.getElementsByClassName("navbtn");
+// adapted from https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles/tab_role
+window.addEventListener("DOMContentLoaded", () => {
+  // Only handle one particular tablist; if you have multiple tab
+  // lists (might even be nested), you have to apply this code for each one
+  const tabList = document.querySelector('[role="tablist"]');
+  const tabs = tabList.querySelectorAll(':scope > [role="tab"]');
 
+  // Add a click event handler to each tab
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", changeTabs);
+  });
+
+  // Enable arrow navigation between tabs in the tab list
+  let tabFocus = 0;
+
+  tabList.addEventListener("keydown", (e) => {
+    // Move right
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      tabs[tabFocus].setAttribute("tabindex", -1);
+      if (e.key === "ArrowRight") {
+        tabFocus++;
+        // If we're at the end, go to the start
+        if (tabFocus >= tabs.length) {
+          tabFocus = 0;
+        }
+        // Move left
+      } else if (e.key === "ArrowLeft") {
+        tabFocus--;
+        // If we're at the start, move to the end
+        if (tabFocus < 0) {
+          tabFocus = tabs.length - 1;
+        }
+      }
+
+      tabs[tabFocus].setAttribute("tabindex", 0);
+      tabs[tabFocus].focus();
+    }
+  });
+});
+
+function changeTabs(e) {
+  console.log("changing tabs: " + e.target.ariaControls);
+  const targetTab = e.target;
+  const tabList = targetTab.parentNode;
+  const tabGroup = tabList.parentNode;
+
+  // Remove all current selected tabs
+  tabList
+    .querySelectorAll(':scope > [aria-selected="true"]')
+    .forEach((t) => t.setAttribute("aria-selected", false));
+
+  // Set this tab as selected
+  targetTab.setAttribute("aria-selected", true);
+
+  // Hide all tab panels
+  tabGroup
+    .querySelectorAll(':scope > [role="tabpanel"]')
+    .forEach((p) => p.setAttribute("hidden", true));
+  console.log(tabGroup);
+  
+  // Show the selected panel
+  tabGroup
+    .querySelector(`#${targetTab.getAttribute("aria-controls")}`)
+    .removeAttribute("hidden");
+
+  // Show or hide the "home" button
+  if (targetTab.id !== "home_btn") {
+    document.getElementById("home_btn").removeAttribute("hidden");
+  } else {
+    document.getElementById("home_btn").setAttribute("hidden", true);
+  }
+
+  // Set focus on the heading of the newly visible section
+  let section = tabGroup.querySelector(`#${targetTab.getAttribute("aria-controls")}`);
+  let heading = section.querySelector("h1, h2, h3, h4, h5, h6");
+  if (heading) {
+    heading.setAttribute("tabindex", "-1");
+    heading.focus();
+  }
+
+  // Update the URL hash without adding to the browser history
+  history.replaceState(null, null, `#${targetTab.getAttribute("aria-controls")}`);
+
+  // Visually indicate the selected tab
+  const tabs = tabList.querySelectorAll('[role="tab"]');
+  tabs.forEach((tab) => {
+    if (tab === targetTab && tab.id !== "home_btn") {
+      tab.style.backgroundColor = "rgb(226, 239, 242)";
+    } else if (tab.id !== "home_btn") {
+      tab.style.backgroundColor = "rgb(135, 206, 235)";   
+    }
+  });
+
+}
+
+function show_status() {
+  const tabList = document.querySelector('[role="tablist"]');
+  const tabs = tabList.querySelectorAll('[role="tab"]');
+  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+  console.log("Tab aria-selected values:");
+  tabs.forEach(tab => {
+    console.log(`${tab.id}: ${tab.getAttribute("aria-selected")}`);
+  });
+
+  console.log("Tab panel hidden values:");
+  tabPanels.forEach(panel => {
+    console.log(`${panel.id}: ${panel.getAttribute("hidden")}`);
+  });
+}
+
+/*
 
 function show_me(section) {
 
@@ -202,19 +361,21 @@ window.addEventListener("hashchange", function () {
       show_me(section)
     }
 });
+*/  
 
 // Keep outside of functions to run on page load
 if(window.location.hash) {
     var section = window.location.hash.substr(1,);
-    console.log(section);
-    var content = document.getElementById(section);
-    if (section == "home") { 
-      go_home();
+    if (!document.getElementById(section) || !document.getElementById(section + "_btn")) {
+      section = "home";
     }
-    else if (content != null)  {
-      show_me(section)
-    }
+    console.log("On load, section = " + section);
+    changeTabs({target: document.getElementById(section + "_btn")});
+} else {
+    changeTabs({target: document.getElementById("home_btn")});
 }
+
+
 
 </script>
 

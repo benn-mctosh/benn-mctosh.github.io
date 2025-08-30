@@ -364,7 +364,7 @@ a {
 
 
 .navbtn {
-  padding:10px 16px 8px 16px!important; /* top right bottom left */
+  padding:2px 16px 0px 16px!important; /* top right bottom left */
   background-color: rgb(135, 206, 235);
   margin-right:10px!important; 
   margin-bottom:20px!important;
