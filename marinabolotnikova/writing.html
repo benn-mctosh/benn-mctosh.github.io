@@ -69,9 +69,6 @@
         return;
       }
 
-      // Remove this if the jumpyness when you click a tag is annoying
-      window.scrollTo(window.scrollX, window.scrollY - 20);
-
       // Update tabs when hash changes (e.g., browser back/forward)
       let navtag = location.hash.slice(1);
       const validTags = tags.flatMap(obj => Object.keys(obj));
