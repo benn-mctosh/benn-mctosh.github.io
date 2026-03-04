@@ -32,7 +32,7 @@
       <a href="#home" onclick="go_home()"><img class="w3-image" src="pics/2025-sq-bw.jpg" height=150 width=150 style="max-width:100%;box-shadow:3px 3px #cca;border-radius:50%;" alt="Smiling Bennett"></a>
       <p style="font-size:11px"><i>Photo courtesy <a href="https://curbonline.com/about/" target="_blank">Curb Magazine</a></i></p>
         <div class="linkbox">
-            <a href="#cv">CV</a>
+            <a onclick="changeTabs({target: document.getElementById('cv_btn')})" href="#home">CV</a>
             <a href="https://blog.bennettmcintosh.com">Blog</a>
         </div>
         <div class="linkbox">
@@ -107,12 +107,13 @@
         </button> 
         <button 
           role="tab" 
+          title="Back home"
           aria-selected="true" 
           aria-controls="home"           
           style="position:absolute;top:10px;right:0px;margin:10px;border:none;text-decoration:none!important;background-color:white;font-size:20px;line-height:20px;box-shadow:none!important;border-radius:0px;cursor:pointer;" 
           id="home_btn"
           hidden>
-          ❌
+          |☜
         </button>   
 
     </div>
@@ -122,7 +123,7 @@
     </div>
     <div id="research" role="tabpanel" aria-labelledby="research_btn" class="section">
       <h3>Research</h3>
-      <div class="announcebox"><p>📣 May 2025: Read my preprint with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> on data sharing, environmental regulation, and scientific controvrsy:  <a href="https://osf.io/preprints/metaarxiv/jfbr8_v1" target="_blank">“Adversarial reanalysis and the challenge of open data in regulatory science”</a>!</p></div>
+      <div class="announcebox"><p>📣 May 2025: Read my preprint with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> on data sharing, environmental regulation, and scientific controvrsy:  <a href="https://osf.io/preprints/metaarxiv/jfbr8_2" target="_blank">“Adversarial reanalysis and the challenge of open data in regulatory science”</a>!</p></div>
       <p>I work at the intersection of History and Science and Technology Studies (STS), examining how scientists, the questions they ask, the technology they use, and the world in which they live in all shape each other. I am interested in scientists&#8217; data practices—how they make their data useable, portable, and intelligible—and what these practices mean <i>about</i> and <i>for</i> the context in which this science happens.</p>
       <p>Stated more specifically, and with more STS shibboleths, I use historical and ethnographic methods to examine the infrastructure for circulation of scientific data. I am interested in especially in the implications of open data practices for managing controversies in interdisciplinary spaces.</p>
       <p>My dissertation, <i>Genetic Associations: A Data-Centric History of the Social Genome, 1990–Present</i>, is an historical and ethnographic study of “social genomics,” an interdisciplinary research community that seeks to apply genomic and epigenomic data to the study of social outcomes and inequality. Where previous scholarship has approached social genomics by asking how social phenomena become subject to the authority of biogenetic discourse, my focus on the data practices of social genomics researchers—many of them trained in the statistical social sciences—foregrounds the role of tools and concerns endogenous to the social sciences, from the “replication crisis” in psychology to the “credibility revolution” in economics. The dissertation also explores data sharing as an arena for implicit and explicit contestation over the boundaries between science and pseudoscience.</p>
@@ -138,7 +139,8 @@
 
       <h4>As Teaching Assistant</h4>
       <ul>
-        <li><b>The Digital Age </b>(Hist Sci 150): Fall 2021 & 2024</li>
+        <li><b>Where Science Meets Society (STS 201): Spring 2025</b></li>
+        <li><b>The Digital Age </b>(Hist Sci 150): Fall 2024 & 2021</li>
         <li><b>Biology and Society</b> (Hist Sci 133): Spring 2024</li>
         <li><b>The Making of Modern Science</b> (Hist Sci 202): Spring 2022</li>
       </ul>
@@ -147,7 +149,7 @@
       <h3>Recent News</h3>
          <p><b>July 2025:</b> <a href="https://kathrynemetcalf.com/" target="_blank">Kathryne Metcalf</a> and I had a great time running the panel “Rethinking ‘Population’: Histories of an Idea in Human Genetics” at <a href="https://ishpssb2025.icbas.up.pt/" target="_blank">ISHPSSB</a>. Thanks to <a href="https://www.sps.ed.ac.uk/staff/carolina-mayes" target="_blank">Carolina Mayes</a> for joining us and <a href="https://www.uu.nl/staff/ANievesDelgado" target="_blank">Abigail Nieves Delgado</a> for stepping in to chair on short notice!</p>
          <p><b>June 2025:</b> My review of Dalton Conley’s <i>The Social Genome: The New Science of Nature and Nurture</i> is <a href="https://networks.h-net.org/group/reviews/20072005/mcintosh-conley-social-genome-new-science-nature-and-nurture" target="_blank">out now on H-Sci-Med-Tech</a></p>
-         <p><b>May 2025:</b> 🚨 Preprint alert! 🚨 “Adversarial reanalysis and the challenge of open data in regulatory science” with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> , is out now <a href="https://osf.io/preprints/metaarxiv/jfbr8_v1" target="_blank">on MetaArXiv</a></p>
+         <p><b>May 2025:</b> 🚨 Preprint alert! 🚨 “Adversarial reanalysis and the challenge of open data in regulatory science” with <a href="https://www.nicolenelson.net/" target="_blank">Nicole Nelson</a> and <a href="https://histsci.fas.harvard.edu/people/kelsey-ichikawa" target="_blank">Kelsey Ichikawa</a> , is out now <a href="https://osf.io/preprints/metaarxiv/jfbr8_v2" target="_blank">on MetaArXiv</a></p>
          <p><b>May 2025:</b> I presented at <i>both</i> The Advances in Social Genomics Conference (<a href="https://isg.wisc.edu/events/the-advances-in-social-genomics-conference/" target="_blank">TAGC</a>) in Madison, WI, and the European Social Science Genomics Network (<a href="https://essgn.org/essgn-conference-iv/" target="_blank">ESSGN</a>) conference in Bristol, UK this month. Thanks to all the geneticists and social scientists at both conferences for their thoughtful engagement with my work.</p>
    </div>
     <div id="writing" role="tabpanel" aria-labelledby="writing_btn" class="section">
@@ -283,6 +285,10 @@ function changeTabs(e) {
     }
   });
 
+}
+
+function go_home() {
+  changeTabs({target: document.getElementById("home_btn")});
 }
 
 function show_status() {
